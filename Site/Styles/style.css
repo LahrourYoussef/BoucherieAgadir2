@@ -1008,7 +1008,7 @@
 
 .promo-large {
     grid-row: span 2;
-    min-height: 730px;
+    min-height: auto;
 }
 
 .promo-badge {

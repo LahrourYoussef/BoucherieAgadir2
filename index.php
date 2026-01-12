@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-<<<<<<< HEAD
     <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
-=======
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997 </title>
->>>>>>> b670a97 (Initialisation du projet Boucherie Agadir avec configuration sécurisée)
     <link rel="stylesheet" href="Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -46,7 +42,7 @@
         <section class="hero" id="accueil">
             <div class="hero-container">
                 <div class="hero-text">
-                    <span class="tagline" aria-label="Depuis 1997">VIANDE FRAÎCHE DEPUIS 1997</span>
+                    <span class="tagline" aria-label="Depuis 1997">VIANDE FRAÎCHE DEPUIS 1997 ( à moidifier)</span>
                     <h1>Une viande fraîche et de qualité<br>chaque jour chez votre boucher</h1>
                     <p>
                         Une sélection rigoureuse de viandes fraîches, préparées avec soin dans notre boucherie,
@@ -230,10 +226,7 @@
                                 <span class="new-price">71,90 €</span>
                             </div>
                             <button class="cta cta-white">Profiter de l'offre</button>
-                        </div>
-                        <div class="promo-image">
-                            <img src="images/viande1.jpg" alt="Pack famille" loading="lazy">
-                        </div>
+                        </div>    
                     </div>
                     <div class="promo-card">
                         <span class="promo-badge">-15%</span>
