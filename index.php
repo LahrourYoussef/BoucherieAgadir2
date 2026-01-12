@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
     <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
-    <link rel="stylesheet" href="Styles/style.css" />
+    <link rel="stylesheet" href="Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -31,7 +31,7 @@
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="images/www.apple.com-27.svg" alt="Panier" class="icon" />
+                    <img src="Site/images/www.apple.com-27.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
             </div>
@@ -60,10 +60,10 @@
                 
                 <div class="hero-images">
                     <div class="card card-left" aria-hidden="true">
-                        <img src="images/viande1.jpg" alt="Viande fraîche de qualité" loading="lazy">
+                        <img src="Site/images/viande1.jpg" alt="Viande fraîche de qualité" loading="lazy">
                     </div>
                     <div class="card card-right" aria-hidden="true">
-                        <img src="images/viande2.webp" alt="Viande préparée avec soin" loading="lazy">
+                        <img src="Site/images/viande2.webp" alt="Viande préparée avec soin" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="about-image">
                         <div class="image-card">
-                            <img src="images/viande1.jpg" alt="Notre boucherie" loading="lazy">
+                            <img src="Site/images/viande1.jpg" alt="Notre boucherie" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande1.jpg" alt="Bœuf premium" loading="lazy">
+                            <img src="Site/images/viande1.jpg" alt="Bœuf premium" loading="lazy">
                             <span class="product-badge">Nouveau</span>
                         </div>
                         <div class="product-info">
@@ -138,7 +138,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande2.webp" alt="Agneau de qualité" loading="lazy">
+                            <img src="Site/images/viande2.webp" alt="Agneau de qualité" loading="lazy">
                         </div>
                         <div class="product-info">
                             <h3>Agneau de Qualité</h3>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande1.jpg" alt="Porc fermier" loading="lazy">
+                            <img src="Site/images/viande1.jpg" alt="Porc fermier" loading="lazy">
                             <span class="product-badge promo">-15%</span>
                         </div>
                         <div class="product-info">
@@ -168,7 +168,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande2.webp" alt="Volaille bio" loading="lazy">
+                            <img src="Site/images/viande2.webp" alt="Volaille bio" loading="lazy">
                         </div>
                         <div class="product-info">
                             <h3>Volaille Bio</h3>
@@ -181,7 +181,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande1.jpg" alt="Charcuterie artisanale" loading="lazy">
+                            <img src="Site/images/viande1.jpg" alt="Charcuterie artisanale" loading="lazy">
                         </div>
                         <div class="product-info">
                             <h3>Charcuterie Artisanale</h3>
@@ -194,7 +194,7 @@
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/viande2.webp" alt="Plats préparés" loading="lazy">
+                            <img src="Site/images/viande2.webp" alt="Plats préparés" loading="lazy">
                         </div>
                         <div class="product-info">
                             <h3>Plats Préparés</h3>
@@ -226,9 +226,6 @@
                                 <span class="new-price">71,90 €</span>
                             </div>
                             <button class="cta cta-white">Profiter de l'offre</button>
-                        </div>
-                        <div class="promo-image">
-                            <img src="images/viande1.jpg" alt="Pack famille" loading="lazy">
                         </div>
                     </div>
                     <div class="promo-card">
