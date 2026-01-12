@@ -42,7 +42,7 @@
         <section class="hero" id="accueil">
             <div class="hero-container">
                 <div class="hero-text">
-                    <span class="tagline" aria-label="Depuis 1997">VIANDE FRAÎCHE DEPUIS 1997</span>
+                    <span class="tagline" aria-label="Depuis 1997">VIANDE FRAÎCHE DEPUIS 1997 ( à moidifier)</span>
                     <h1>Une viande fraîche et de qualité<br>chaque jour chez votre boucher</h1>
                     <p>
                         Une sélection rigoureuse de viandes fraîches, préparées avec soin dans notre boucherie,
