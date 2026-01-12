@@ -226,7 +226,10 @@
                                 <span class="new-price">71,90 €</span>
                             </div>
                             <button class="cta cta-white">Profiter de l'offre</button>
-                        </div>    
+                        </div>
+                        <div class="promo-image">
+                            <img src="images/viande1.jpg" alt="Pack famille" loading="lazy">
+                        </div>
                     </div>
                     <div class="promo-card">
                         <span class="promo-badge">-15%</span>
