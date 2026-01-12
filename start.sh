@@ -39,6 +39,11 @@ else
     php -S 0.0.0.0:$WEB_PORT -t $WEB_DIR &
 fi
 
+# chmod → change les permissions
+# +x → ajoute le droit exécution
+chmod +x start.sh
+
+
 # Démarrage du serveur PHP pour le dossier doc
 DOC_PORT=8001
 if is_port_in_use $DOC_PORT; then
