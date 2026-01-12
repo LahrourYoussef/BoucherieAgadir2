@@ -4,69 +4,52 @@
 #######################################
 
 #######################################
+# === CONFIGURATION SENSIBLE (BDD) ===
+#######################################
+# Ajout spécifique pour ton fichier db.php à la racine
+db.php
+config.php
+connexion.php
+.env
+
+# Anciennes règles CakePHP (au cas où tu changes de structure)
+/config/app.php
+/app/Config/core.php
+/app/Config/database.php
+
+#######################################
 # === DEPENDANCES PHP (Composer) ===
 #######################################
 /vendor/*
 /vendors/*
 
 #######################################
-# === CONFIGURATION SENSIBLE ===
-# Contient identifiants BDD, clés, etc.
-# Ne doit JAMAIS être sur GitHub
+# === UPLOADS ADMIN ===
 #######################################
-/config/app.php
-/app/Config/core.php
-/app/Config/database.php
+# Bloque les photos des produits de la boucherie en local
+/uploads/
 
 #######################################
-# === FICHIERS TEMPORAIRES (CACHE) ===
-# Générés automatiquement par CakePHP
+# === FICHIERS TEMPORAIRES / CACHE ===
 #######################################
 /tmp/cache/models/*
 !/tmp/cache/models/empty
-
 /tmp/cache/persistent/*
 !/tmp/cache/persistent/empty
-
 /tmp/cache/views/*
 !/tmp/cache/views/empty
-
-#######################################
-# === SESSIONS ===
-# Données utilisateurs temporaires
-#######################################
 /tmp/sessions/*
 !/tmp/sessions/empty
-
-#######################################
-# === FICHIERS DE TEST ===
-#######################################
 /tmp/tests/*
 !/tmp/tests/empty
 
 #######################################
-# === LOGS ===
-# Journaux d’erreurs et d’accès
+# === LOGS & OUTILS LOCAUX ===
 #######################################
 /logs/*
 !/logs/empty
-
-#######################################
-# === UPLOADS ADMIN ===
-# Images produits, fichiers privés
-#######################################
-/uploads/
-
-#######################################
-# === OUTILS LOCAUX (DEV) ===
-#######################################
+*.log
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
-#######################################
-# === ENVIRONNEMENT ===
-#######################################
-.env
-*.log
