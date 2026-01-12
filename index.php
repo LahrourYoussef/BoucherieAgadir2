@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-<<<<<<< HEAD
     <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
-=======
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997 </title>
->>>>>>> b670a97 (Initialisation du projet Boucherie Agadir avec configuration sécurisée)
     <link rel="stylesheet" href="Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
