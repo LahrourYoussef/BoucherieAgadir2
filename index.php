@@ -227,9 +227,7 @@
                             </div>
                             <button class="cta cta-white">Profiter de l'offre</button>
                         </div>
-                        <div class="promo-image">
-                            <img src="Site/images/viande1.jpg" alt="Pack famille" loading="lazy">
-                        </div>
+                        
                     </div>
                     <div class="promo-card">
                         <span class="promo-badge">-15%</span>
@@ -433,6 +431,31 @@
             <p>&copy; 2024 Boucherie Agadir. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <div id='contenu'>
+			<?php
+			// si aucune information n'est présente dans l'url, le controleur par défaut sera 'accueil'
+			if (isset($_GET['controleur']))
+				$controleur = filter_var($_GET['controleur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+			else
+				$controleur = 'general';
+
+			switch ($controleur) {
+				case 'general':
+					include_once 'vues/accueil.html';
+					break;
+				case 'developpeurs':
+					include_once 'controleurs/gestionDeveloppeurs.php';
+					break;
+				case 'competence':
+					include_once 'controleurs/gestionCompetence.php';
+					break;
+			}
+
+
+			?>
+
+		</div>
 
     <script>
         // Menu mobile toggle
