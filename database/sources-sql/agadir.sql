@@ -1,40 +1,70 @@
-USE LaBoucherie;
+USE BoucherieAgadir;
 
-#------------------------------------------------------------
-# Table: Viandes
-#------------------------------------------------------------
+-- ----------------------------
+-- Table: Client
+-- ----------------------------
+CREATE TABLE Client (
+  Id INT NOT NULL,
+  Nom VARCHAR(50) NOT NULL,
+  Prenom VARCHAR(50) NOT NULL,
+  Tel VARCHAR(20),
+  Email VARCHAR(100) NOT NULL,
+  CONSTRAINT Client_PK PRIMARY KEY (Id)
+)ENGINE=InnoDB;
 
-DROP TABLE IF EXISTS `Viandes`;
 
-CREATE TABLE Viandes (
-    id int Auto_increment NOT NULL,
-    nom Varchar(20) NOT NULL,
-    typeViande Varchar(15) NOT NULL,
-    CONSTRAINT Classe_PK PRIMARY KEY (id)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb3 COLLATE = utf8mb3_general_ci;
+-- ----------------------------
+-- Table: Stock
+-- ----------------------------
+CREATE TABLE Stock (
+  Id INT NOT NULL,
+  Quantite_disponible INT NOT NULL,
+  Seuil_alerte INT NOT NULL,
+  CONSTRAINT Stock_PK PRIMARY KEY (Id)
+)ENGINE=InnoDB;
 
-INSERT INTO Viandes (nom, typeViande) VALUES
-('Entrecôte', 'Boeuf'),
-('Côte de boeuf', 'Boeuf'),
-('Escalope', 'Poulet'),
-('Cuisses', 'Poulet'),
-('Côtelettes', 'Agneau'),
-('Merguez', 'Mouton');
-    
 
-#------------------------------------------------------------
-# Table: Stocks
-#------------------------------------------------------------
-CREATE TABLE Stocks (
-    id INT AUTO_INCREMENT NOT NULL,
-    viande_id INT NOT NULL,
-    quantite INT NOT NULL,
-    CONSTRAINT Stocks_PK PRIMARY KEY (id),
-    CONSTRAINT Stocks_Viandes_FK FOREIGN KEY (viande_id)
-        REFERENCES Viandes(id)
-        ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+-- ----------------------------
+-- Table: Produit
+-- ----------------------------
+CREATE TABLE Produit (
+  Id INT NOT NULL,
+  Nom VARCHAR(100) NOT NULL,
+  Description TEXT,
+  Prix DECIMAL(10,2) NOT NULL,
+  Quantite VARCHAR(50),
+  Photo VARCHAR(255),
+  Allergenes VARCHAR(255),
+  CONSTRAINT Produit_PK PRIMARY KEY (Id)
+)ENGINE=InnoDB;
 
+
+-- ----------------------------
+-- Table: Commande
+-- ----------------------------
+CREATE TABLE Commande (
+  Id INT NOT NULL,
+  Date_retrait DATE NOT NULL,
+  Heure_retrait TIME NOT NULL,
+  Status VARCHAR(30) NOT NULL,
+  Total DECIMAL(10,2) NOT NULL,
+  Id_Client INT NOT NULL,
+  CONSTRAINT Commande_PK PRIMARY KEY (Id),
+  CONSTRAINT Commande_Id_Client_FK FOREIGN KEY (Id_Client) REFERENCES Client (Id)
+)ENGINE=InnoDB;
+
+
+-- ----------------------------
+-- Table: Contient
+-- ----------------------------
+CREATE TABLE Contient (
+  Id INT NOT NULL,
+  Id_Produit INT NOT NULL,
+  Quantite INT NOT NULL,
+  CONSTRAINT Contient_PK PRIMARY KEY (Id, Id_Produit),
+  CONSTRAINT Contient_Id_FK FOREIGN KEY (Id) REFERENCES Commande (Id),
+  CONSTRAINT Contient_Id_Produit_FK FOREIGN KEY (Id_Produit) REFERENCES Produit (Id)
+)ENGINE=InnoDB;
 
 #------------------------------------------------------------
 # Données de départ
@@ -48,10 +78,10 @@ INSERT INTO Stocks (viande_id, quantite) VALUES
 
 
 #------------------------------------------------------------
-# Habilitations
+# Habilitations ( à refaire)
 #------------------------------------------------------------
-GRANT SELECT ON `LaBoucherie`.`Viandes` TO 'Agadir'@'%';
-GRANT SELECT,DELETE ON `LaBoucherie`.`Viandes` TO 'SIO2'@'%';
-GRANT SELECT ON `LaBoucherie`.`Stocks` TO 'Agadir'@'%';
-GRANT INSERT ON `LaBoucherie`.`Stocks` TO 'SIO2'@'%';
+GRANT SELECT ON `BoucherieAgadir`.`Viandes` TO 'Agadir'@'%';
+GRANT SELECT,DELETE ON `BoucherieAgadir`.`Viandes` TO 'SIO2'@'%';
+GRANT SELECT ON `BoucherieAgadir`.`Stocks` TO 'Agadir'@'%';
+GRANT INSERT ON `BoucherieAgadir`.`Stocks` TO 'SIO2'@'%';
 
