@@ -25,8 +25,8 @@
                 <a href="#boucherie" class="nav-link">La Boucherie</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="#promotions" class="nav-link">Promotions</a>
-                <a href="#click-collect" class="nav-link">Click & Collect</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
