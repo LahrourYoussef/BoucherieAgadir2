@@ -22,7 +22,7 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#boucherie" class="nav-link">La Boucherie</a>
+                <a href="#boucherie" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="#promotions" class="nav-link">Promotions</a>
                 <a href="#click-collect" class="nav-link">Click & Collect</a>
