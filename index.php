@@ -12,7 +12,8 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                BOUCHERIE<span>AGADIR</span>
+                <a href="index.php">BOUCHERIE<span>AGADIR</span></a>
+                
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -22,7 +23,7 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#boucherie" class="nav-link">Notre histoire</a>
+                <a href="#" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="#promotions" class="nav-link">Promotions</a>
                 <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
