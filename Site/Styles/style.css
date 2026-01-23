@@ -61,6 +61,11 @@
     transition: var(--transition);
     cursor: pointer;
 }
+
+.logo a {
+    text-decoration: none;
+    color: black;
+}
     
 .logo:hover {
     transform: scale(1.05);

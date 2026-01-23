@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
+    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
+    <title>Boucherie Agadir - Viande Fraîche depuis 2022</title>
     <link rel="stylesheet" href="Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -43,7 +43,7 @@
         <section class="hero" id="accueil">
             <div class="hero-container">
                 <div class="hero-text">
-                    <span class="tagline" aria-label="Depuis 1997">VIANDE FRAÎCHE DEPUIS 1997 ( à moidifier)</span>
+                    <span class="tagline" aria-label="Depuis 2022">VIANDE FRAÎCHE DEPUIS 2022</span>
                     <h1>Une viande fraîche et de qualité<br>chaque jour chez votre boucher</h1>
                     <p>
                         Une sélection rigoureuse de viandes fraîches, préparées avec soin dans notre boucherie,
@@ -79,25 +79,24 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p class="lead">
-                            Depuis 1997, la Boucherie Agadir est votre partenaire de confiance pour une viande de qualité exceptionnelle.
+                            Depuis 2022, la Boucherie Agadir est votre partenaire de confiance pour une viande de qualité exceptionnelle.
                         </p>
                         <p>
-                            Fondée avec passion par des artisans bouchers expérimentés, notre boucherie allie tradition et modernité. 
-                            Nous sélectionnons rigoureusement nos viandes auprès d'éleveurs locaux qui partagent nos valeurs de respect 
-                            animal et d'excellence.
+                            Fondée avec passion par un artisan boucher expérimenté, notre boucherie allie tradition et modernité. 
+                            Nous sélectionnons rigoureusement nos viandes auprès d’éleveurs locaux qui partagent nos valeurs de respect 
+                            animal et d’excellence.
                         </p>
                         <p>
-                            Chaque jour, nos maîtres bouchers préparent avec soin une large gamme de produits : viandes fraîches, 
-                            plats cuisinés, charcuteries artisanales et spécialités maison. Notre engagement ? Vous offrir le meilleur 
-                            du goût et de la fraîcheur.
+                            Chaque jour, notre maître boucher prépare avec soin une large gamme de produits : viandes fraîches, plats cuisinés
+                            et spécialités maison. Notre engagement ? Vous offrir le meilleur du goût et de la fraîcheur.
                         </p>
                         <div class="stats">
                             <div class="stat-item">
-                                <div class="stat-number">27</div>
+                                <div class="stat-number">4</div>
                                 <div class="stat-label">Années d'expérience</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number">5000+</div>
+                                <div class="stat-number">100+</div>
                                 <div class="stat-label">Clients satisfaits</div>
                             </div>
                             <div class="stat-item">
