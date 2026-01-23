@@ -60,6 +60,7 @@
     letter-spacing: -0.5px;
     transition: var(--transition);
     cursor: pointer;
+    color: black;
 }
     
 .logo:hover {
@@ -160,6 +161,11 @@
 
 .cart-button:hover .cart-badge {
     transform: scale(1);
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 /* Menu Toggle (Mobile) */

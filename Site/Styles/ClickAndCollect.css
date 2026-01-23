@@ -60,6 +60,7 @@
     letter-spacing: -0.5px;
     transition: var(--transition);
     cursor: pointer;
+    color: black;
 }
     
 .logo:hover {
@@ -69,6 +70,11 @@
     .logo span {
     color: var(--primary-color);
     margin-left: 4px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
 }
 
 .nav {
@@ -161,6 +167,8 @@
 .cart-button:hover .cart-badge {
     transform: scale(1);
 }
+
+
 
 /* Menu Toggle (Mobile) */
 .menu-toggle {
