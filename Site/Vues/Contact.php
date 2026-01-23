@@ -13,7 +13,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <a href="../../index.php">BOUCHERIE<span>AGADIR</span></a>
+               <img src="Site/images/Logo.png" alt="Logo Boucherie Agadir" width="45px" >
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
