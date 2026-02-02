@@ -12,7 +12,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" > 
+                <a href="#accueil"><img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -22,7 +22,7 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#" class="nav-link">Notre histoire</a>
+                <a href="#histoire" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="Site/Vues/Promotions.php" class="nav-link">Promotions</a>
                 <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="about" id="boucherie">
+        <section class="about" id="histoire">
             <div class="container">
                 <div class="section-header">
                     <span class="section-tagline">NOTRE HISTOIRE</span>
@@ -288,7 +288,7 @@
                                 <span>Paiement en ligne sécurisé</span>
                             </li>
                         </ul>
-                        <button class="cta">Commander maintenant</button>
+                        <a href="Site/Vues/ClickAndCollect.php" class="cta">Commander maintenant</a>
                     </div>
                     <div class="click-collect-visual">
                         <div class="visual-card">
@@ -321,8 +321,8 @@
                     <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -330,12 +330,12 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Notre histoire</a></li>
-                    <li><a href="#">Nos produits</a></li>
-                    <li><a href="#">Promotions</a></li>
-                    <li><a href="#">Click & Collect</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#histoire">Notre histoire</a></li>
+                    <li><a href="#produits">Nos produits</a></li>
+                    <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="Site/Vues/Contact.php">Contact</a></li>
                 </ul>
             </div>
     

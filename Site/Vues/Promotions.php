@@ -22,7 +22,7 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#" class="nav-link">Notre histoire</a>
+                <a href="../../index.php#histoire" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="#promotions" class="nav-link">Promotions</a>
                 <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
@@ -90,8 +90,8 @@
                     <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="../images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -99,12 +99,12 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Notre histoire</a></li>
-                    <li><a href="#">Nos produits</a></li>
-                    <li><a href="#">Promotions</a></li>
-                    <li><a href="#">Click & Collect</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../../index.php">Accueil</a></li>
+                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
+                    <li><a href="../../index.php#produits">Nos produits</a></li>
+                    <li><a href="Promotions.php">Promotions</a></li>
+                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
                 </ul>
             </div>
     

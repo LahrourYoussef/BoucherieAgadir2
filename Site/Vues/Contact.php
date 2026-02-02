@@ -23,7 +23,7 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="../../index.php" class="nav-link">Notre histoire</a>
+                <a href="../../index.php#histoire" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="Promotions.php" class="nav-link">Promotions</a>
                 <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
@@ -54,7 +54,7 @@
                     <p class="section-description">
                         Passez nous voir en magasin ou envoyez-nous un message via le formulaire ci-dessous.
                     </p>
-                    <h1>Formulaire de contact</h1>
+                    
                 </div>
     
                 <div class="contact-grid">
@@ -64,28 +64,28 @@
     
                         <div class="visual-card">
                             <div class="step">
-                                <div class="step-number">📍</div>
+                                <img src="../images/location.png" alt="Localisation" ></a>
                                 <div class="step-text">
-                                    14 Pl. du Béarn<br>64150 Mourenx
+                                    14 Pl. du Béarn 64150 Mourenx
                                 </div>
                             </div>
     
                             <div class="step">
-                                <div class="step-number">📞</div>
+                                <img src="../images/telephone.png" alt="Téléphone" ></a>
                                 <div class="step-text">
                                     06 27 29 85 56
                                 </div>
                             </div>
     
                             <div class="step">
-                                <div class="step-number">✉️</div>
+                                <img src="../images/mail.png" alt="Email" ></a>
                                 <div class="step-text">
                                     Ben20mohamed97@gmail.com
                                 </div>
                             </div>
     
                             <div class="step">
-                                <div class="step-number">⏰</div>
+                                <img src="../images/horaires.png" alt="Horaires" ></a>
                                 <div class="step-text">
                                     Mardi au Samedi<br>
                                     09h30 - 13h00 / 15h30 - 19h00
@@ -164,11 +164,11 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
+                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="60px" >
     
                 <div class="footer-socials">
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="../images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -176,12 +176,12 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Notre histoire</a></li>
-                    <li><a href="#">Nos produits</a></li>
-                    <li><a href="#">Promotions</a></li>
-                    <li><a href="#">Click & Collect</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../../index.php">Accueil</a></li>
+                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
+                    <li><a href="../../index.php#produits">Nos produits</a></li>
+                    <li><a href="Promotions.php">Promotions</a></li>
+                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
                 </ul>
             </div>
     

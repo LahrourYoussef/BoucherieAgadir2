@@ -27,6 +27,10 @@
     overflow-x: hidden;
     }
     
+    p {
+        font-size: 16px;
+    }
+    
     /* HEADER */
     .header {
     background: var(--white);
@@ -266,13 +270,13 @@ a{
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.7;
-    font-size: 17px;
+    font-size: 16px;
     }
 
 
 /* SECTION CLICK & COLLECT */
 .click-collect {
-    padding: 120px 0;
+    padding: 80px 0;
     background: var(--white);
 }
 
@@ -363,7 +367,7 @@ a{
 }
 
 .step-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
 }
@@ -612,7 +616,7 @@ a{
 }
 
 .footer-socials a {
-    font-size: 18px;
+    font-size: 16px;
     color: #000000;
     transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -851,7 +855,7 @@ a{
 
 @media (max-width: 480px) {
     .logo {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .hero-text h1 {
@@ -894,7 +898,7 @@ a{
     }
     
     .about-text .lead {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .stat-number {
@@ -969,17 +973,16 @@ a{
 
 .section-description {
     color: var(--text-gray);
-    font-size: 18px;
+    font-size: 16px;
     max-width: 600px;
     margin: 0 auto;
 }
 
 /* SECTION CLICK & COLLECT */
 .click-collect {
-    margin-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    padding: 120px 0;
+    padding: 60px 0;
     background: var(--white);
 }
 
@@ -1070,7 +1073,7 @@ a{
 }
 
 .step-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--text-dark);
 }
@@ -1163,7 +1166,7 @@ button:focus-visible {
     .step-number {
         width: 45px;
         height: 45px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .step-text {
@@ -1189,7 +1192,7 @@ button:focus-visible {
     }
 
     .click-collect-text .lead {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .visual-card {
@@ -1203,7 +1206,7 @@ button:focus-visible {
     }
 
     .step-text {
-        font-size: 17px;
+        font-size: 16px;
     }
 }
 
