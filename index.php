@@ -50,7 +50,6 @@
                     </p>
                     <button class="cta" aria-label="Voir notre sélection de produits">
                         Voir notre sélection 
-                        <span class="cta-arrow">→</span>
                     </button>
                     <div class="reviews" role="region" aria-label="Avis clients">
                         <div class="stars" aria-hidden="true">⭐⭐⭐⭐☆</div>
@@ -409,40 +408,94 @@
 		</div>
 
     <script>
-        // Menu mobile toggle
+        // Menu mobile toggle amélioré
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
+        const body = document.body;
         
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('nav-open');
-            menuToggle.classList.toggle('active');
-        });
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                const isOpen = !isExpanded;
+                
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                nav.classList.toggle('nav-open');
+                menuToggle.classList.toggle('active');
+                
+                // Empêcher le scroll du body quand le menu est ouvert
+                if (isOpen) {
+                    body.classList.add('menu-open');
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            const navLinks = nav.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        nav.classList.remove('nav-open');
+                        menuToggle.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Fermer le menu quand on redimensionne la fenêtre
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    nav.classList.remove('nav-open');
+                    menuToggle.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+        }
 
-        // Sticky header
+        // Sticky header amélioré
         const header = document.querySelector('.header');
-        let lastScroll = 0;
+        if (header) {
+            let lastScroll = 0;
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            lastScroll = currentScroll;
-        });
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+        }
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links amélioré
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '#accueil') {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    e.preventDefault();
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
