@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
+    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
+    <title>Contact</title>
     <link rel="stylesheet" href="../Styles/style.css" />
     <link rel="stylesheet" href="../Styles/Contact.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-               <a href="../../index.php"><img src="../images/Logo.png" alt="Logo Boucherie Agadir" width="45px" ></a>
+               <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -23,9 +23,9 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="../../index.php" class="nav-link">La Boucherie</a>
+                <a href="../../index.php" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
-                <a href="#promotions" class="nav-link">Promotions</a>
+                <a href="Promotions.php" class="nav-link">Promotions</a>
                 <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
                 <a href="Contact.php" class="nav-link">Contact</a>
             </nav>
@@ -164,13 +164,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                <div class="logo" aria-label="Boucherie Agadir">
-                    BOUCHERIE<span>AGADIR</span>
-                </div>
-                <p>Votre boucher de confiance depuis 1997</p>
+                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="#" aria-label="Facebook">📘</a>
                     <a href="#" aria-label="Instagram">📸</a>
                     <a href="#" aria-label="TikTok">🎵</a>
                 </div>
@@ -181,9 +177,10 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
                 <h2>Plan du site</h2>
                 <ul>
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Produits</a></li>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">Nos produits</a></li>
+                    <li><a href="#">Promotions</a></li>
                     <li><a href="#">Click & Collect</a></li>
-                    <li><a href="#">À propos</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -203,9 +200,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
             <!-- CONTACT -->
             <div class="footer-section">
                 <h2>Contact</h2>
-                <p>Email : Ben20mohamed97@gmail.com</p>
-                <p>Tél : 06 27 29 85 56</p>
-                <p>📍 14 Pl. du Béarn, 64150 Mourenx</p>
+                <p>Ben20mohamed97@gmail.com</p>
+                <p>06 27 29 85 56</p>
+                <p>14 Pl. du Béarn, 64150 Mourenx</p>
             </div>
     
             <!-- GOOGLE MAPS -->
@@ -221,7 +218,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
         <!-- BOTTOM -->
         <div class="footer-bottom">
             <p>
-                © 2024 Boucherie Agadir — Tous droits réservés • 
+                Tous droits réservés • 
                 <a href="#">CGU</a> • 
                 <a href="#">RGPD</a> • 
                 <a href="#">Mentions légales</a>

@@ -439,48 +439,103 @@ a {
 
 /* FOOTER */
 .footer {
-    background: var(--text-dark);
-    color: var(--white);
-    padding: 60px 60px 20px;
-    margin-top: 100px;
+    background: #ffffff;
+    color: #000000;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
+/* CONTAINER */
 .footer-container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-.footer-section h3 {
-    font-size: 24px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
+/* SECTIONS */
+.footer-section h3,
 .footer-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* LISTES */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 6px;
+}
+
+.footer-section ul li a:hover {
+    color: #b30000;
+}
+
+/* LOGO */
+.footer-logo {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+/* RÉSEAUX SOCIAUX */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
     font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    color: #000000;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.footer-section p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 8px;
-    line-height: 1.6;
+.footer-socials a:hover {
+    transform: scale(1.1);
+    color: #b30000;
 }
 
+/* GOOGLE MAPS (si iframe) */
+.footer iframe {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    border: 0;
+}
+
+/* BAS DE FOOTER */
 .footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
+    font-size: 13px;
+    color: #000000;
+}
+
+.footer-bottom a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #b30000;
 }
 
 /* RESPONSIVE */
