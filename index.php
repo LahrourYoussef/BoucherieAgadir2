@@ -52,8 +52,9 @@
                         Voir notre sélection 
                     </button>
                     <div class="reviews" role="region" aria-label="Avis clients">
-                        <div class="stars" aria-hidden="true">⭐⭐⭐⭐☆</div>
-                        <strong>4,9/5</strong> – Basé sur 16 avis
+                        <div class="stars-outer">
+                        <div class="stars-inner" style="width: 88%;"></div> </div>
+                        <strong>4,4/5</strong> – Basé sur 16 avis avis Google
                     </div>
                 </div>
                 
@@ -215,44 +216,51 @@
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 100%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "Excellente boucherie ! La qualité de la viande est remarquable et le service est toujours au rendez-vous. 
-                            Je recommande vivement."
+                            "Viande et service de qualité !
+                            Que du bonheur ."
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">M</div>
+                            <div class="author-avatar">C</div>
                             <div class="author-info">
-                                <div class="author-name">Marie Dubois</div>
-                                <div class="author-location">Client depuis 5 ans</div>
+                                <div class="author-name">Claude FUMENIA</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 80%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "La meilleure boucherie du quartier ! Les produits sont toujours frais et les conseils des bouchers 
-                            sont précieux. Un vrai plaisir."
+                            Client satisfait 
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">J</div>
+                            <div class="author-avatar">N</div>
                             <div class="author-info">
-                                <div class="author-name">Jean Martin</div>
-                                <div class="author-location">Client depuis 3 ans</div>
+                                <div class="author-name">Noureddine EL MAAROUFI</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 100%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "Qualité exceptionnelle et prix raisonnables. Les plats préparés sont délicieux et la viande 
-                            est toujours tendre. Je ne vais nulle part ailleurs !"
+                            Client satisfait 
                         </p>
                         <div class="testimonial-author">
                             <div class="author-avatar">S</div>
                             <div class="author-info">
-                                <div class="author-name">Sophie Bernard</div>
-                                <div class="author-location">Client depuis 2 ans</div>
+                                <div class="author-name">Siham Aissa</div>
                             </div>
                         </div>
                     </div>
@@ -498,6 +506,15 @@
                         behavior: 'smooth'
                     });
                 }
+
+                const note = 4.4;
+                const starTotal = 5;
+
+                // Calcul du pourcentage
+                const starPercentage = (note / starTotal) * 100;
+
+                // Application de la largeur à la couche de remplissage
+                document.querySelector('.stars-inner').style.width = starPercentage + '%';
             });
         });
     </script>
