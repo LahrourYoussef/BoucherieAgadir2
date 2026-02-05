@@ -272,26 +272,14 @@ a:hover {
 }
 
 .tagline {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 3px;
-  color: var(--text-light);
+  color: #F5F2ED ;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
   margin-bottom: 15px;
   position: relative;
-  padding-left: 20px;
-}
-
-.tagline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 2px;
-  background: var(--primary-color);
 }
 
 .hero-text h1 {
@@ -303,7 +291,7 @@ a:hover {
 }
 
 .hero-text p {
-  color: var(--text-gray);
+  color: #F5F2ED ;
   margin-bottom: 30px;
   line-height: 1.7;
   font-size: 16px;
@@ -311,8 +299,8 @@ a:hover {
 
 /* Bouton CTA */
 .cta {
-  background: var(--primary-color);
-  color: var(--white);
+  background: #F5F2ED;
+  color: #262222;
   border: none;
   padding: 16px 32px;
   border-radius: 50px;
@@ -480,9 +468,9 @@ a:hover {
 }
 
 .section-tagline {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 3px;
-  color: var(--text-light);
+  color: ;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
