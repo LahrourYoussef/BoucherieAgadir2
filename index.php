@@ -208,8 +208,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="product-footer-button">
+                    <a href="Site/Vues/Produit.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
+                </div>
             </div>
-            <a href="Site/Vues/Produit.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
         </section>
 
         <section class="testimonials">

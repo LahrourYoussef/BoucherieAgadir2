@@ -737,6 +737,11 @@ a:hover {
   transition: var(--transition);
 }
 
+.product-footer-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* SECTION PROMOTIONS */
 .promotions {
   padding: 80px 0;
