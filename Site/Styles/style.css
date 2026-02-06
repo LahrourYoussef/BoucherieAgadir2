@@ -742,6 +742,24 @@ a:hover {
   padding: 80px 0;
   background: var(--bg-light);
 }
+.btn-voir-produits {
+  
+    background: #F5F2ED;
+    color: #262222;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(209, 15, 28, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
 
 /* ==========================================================================
    7. SECTION: TÉMOIGNAGES (BLANC)
@@ -819,7 +837,7 @@ a:hover {
 
 .step {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   margin-bottom: 30px;
 }

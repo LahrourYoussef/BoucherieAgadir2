@@ -209,6 +209,7 @@
                     </div>
                 </div>
             </div>
+            <a href="Site/Vues/Produit.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
         </section>
 
         <section class="testimonials">
