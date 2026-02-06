@@ -31,7 +31,7 @@
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="Site/images/panier.svg" alt="Panier" class="icon-cart" />
+                    <img src="Site/images/panier.png" alt="Panier" class="icon-cart" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
                 <button class="cart-button" aria-label="Mon Compte">
