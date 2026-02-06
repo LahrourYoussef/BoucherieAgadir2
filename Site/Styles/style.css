@@ -172,9 +172,15 @@ a:hover {
   transform: scale(1.1);
 }
 
-.icon {
+.icon-cart {
   width: 45px;
   height: 45px;
+  transition: var(--transition);
+}
+
+.icon-account {
+  width: 25px;
+  height: 25px;
   transition: var(--transition);
 }
 

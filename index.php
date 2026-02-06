@@ -31,13 +31,11 @@
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="Site/images/www.apple.com-27.svg" alt="Panier" class="icon" />
+                    <img src="Site/images/panier.svg" alt="Panier" class="icon-cart" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
-                <div class="icons">
-                <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="Site/images/compte.png" alt="Panier" class="icon" />
-                    <span class="cart-badge" aria-hidden="true">0</span>
+                <button class="cart-button" aria-label="Mon Compte">
+                    <img src="Site/images/compte2.png" alt="Compte" class="icon-account" />
                 </button>
             </div>
         </div>
