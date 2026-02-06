@@ -387,9 +387,7 @@
                 <a href="#">RGPD</a> • 
                 <a href="#">Mentions légales</a>
             </p>
-            <p class="dev">
-                Développé par <strong>BTS SIO 2</strong>
-            </p>
+            
         </div>
     </footer>
 
