@@ -470,22 +470,76 @@ a:hover {
 .section-tagline {
   font-size: 14px;
   letter-spacing: 3px;
-  color: ;
+  color: #1A1A1A;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
   margin-bottom: 15px;
 }
 
-.section-header h2 {
+.about-tagline {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.products-tagline {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #F5F2ED;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.testimonials-tagline {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.click-collect-tagline {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #1A1A1A;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.about .section-header h2 {
   font-size: 38px;
   font-weight: 800;
   margin-bottom: 15px;
   color: var(--text-dark);
 }
 
-.section-description {
-  color: var(--text-gray);
+.products .section-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #F5F2ED;
+}
+
+.testimonials .section-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.products-description {
+  color: #F5F2ED;
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto;

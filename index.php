@@ -72,7 +72,7 @@
         <section class="about" id="histoire">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">NOTRE HISTOIRE</span>
+                    <span class="about-tagline">NOTRE HISTOIRE</span>
                     <h2>La Boucherie Agadir</h2>
                 </div>
                 <div class="about-content">
@@ -116,9 +116,9 @@
         <section class="products" id="produits">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">NOTRE SÉLECTION</span>
+                    <span class="products-tagline">NOTRE SÉLECTION</span>
                     <h2>Nos Produits</h2>
-                    <p class="section-description">Découvrez notre gamme complète de viandes et spécialités</p>
+                    <p class="products-description">Découvrez notre gamme complète de viandes et spécialités</p>
                 </div>
                 <div class="products-grid">
                     <div class="product-card">
@@ -211,7 +211,7 @@
         <section class="testimonials">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">TÉMOIGNAGES</span>
+                    <span class="testimonials-tagline">TÉMOIGNAGES</span>
                     <h2>Ce que disent nos clients</h2>
                 </div>
                 <div class="testimonials-grid">
@@ -272,7 +272,7 @@
             <div class="container">
                 <div class="click-collect-content">
                     <div class="click-collect-text">
-                        <span class="section-tagline">SERVICE RAPIDE</span>
+                        <span class="click-collect-tagline">SERVICE RAPIDE</span>
                         <h2>Click & Collect</h2>
                         <p class="lead">
                             Commandez en ligne et récupérez vos produits frais en magasin. Simple, rapide et pratique !
