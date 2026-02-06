@@ -34,6 +34,11 @@
                     <img src="Site/images/www.apple.com-27.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
+                <div class="icons">
+                <button class="cart-button" aria-label="Panier d'achat">
+                    <img src="Site/images/compte.png" alt="Panier" class="icon" />
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </button>
             </div>
         </div>
     </header>
