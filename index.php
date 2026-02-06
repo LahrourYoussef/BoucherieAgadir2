@@ -381,7 +381,7 @@
     
         <!-- BOTTOM -->
         <div class="footer-bottom">
-            <p>
+            <p class="copyright">
                 Tous droits réservés • 
                 <a href="#">CGU</a> • 
                 <a href="#">RGPD</a> • 
