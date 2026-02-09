@@ -138,14 +138,17 @@
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
                 <div class="logo" aria-label="Boucherie Agadir">
-                    BOUCHERIE<span>AGADIR</span>
+                  <a href="../../index.php"><img src="../images/Logo.png" alt="Logo Boucherie Agadir" width="45px" ></a>
                 </div>
                 <p>Votre boucher de confiance depuis 1997</p>
     
                 <div class="footer-socials">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📸</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="https://www.instagram.com/boucherie_agadir_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
+                        <img src="../images/instagram.svg" alt="Logo Instagram" width="33px" height="33px">
+                    </a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64?is_from_webapp=1&sender_device=pc" aria-label="TikTok">
+                        <img src="../images/tiktok.svg" alt="Logo TikTok" width="30px" height="30px">
+                    </a>
                 </div>
             </div>
     
