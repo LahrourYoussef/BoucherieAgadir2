@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 2022</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +12,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <img src="Site/images/Logo.png" alt="Logo Boucherie Agadir" width="45px" > 
+                <a href="#accueil"><img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -22,17 +22,20 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#" class="nav-link">Notre histoire</a>
+                <a href="#histoire" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
-                <a href="#promotions" class="nav-link">Promotions</a>
+                <a href="Site/Vues/Promotions.php" class="nav-link">Promotions</a>
                 <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
                 <a href="Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="Site/images/www.apple.com-27.svg" alt="Panier" class="icon" />
+                    <img src="Site/images/panier.png" alt="Panier" class="icon-cart" />
                     <span class="cart-badge" aria-hidden="true">0</span>
+                </button>
+                <button class="cart-button" aria-label="Mon Compte">
+                    <img src="Site/images/compte2.png" alt="Compte" class="icon-account" />
                 </button>
             </div>
         </div>
@@ -50,11 +53,11 @@
                     </p>
                     <button class="cta" aria-label="Voir notre sélection de produits">
                         Voir notre sélection 
-                        <span class="cta-arrow">→</span>
                     </button>
                     <div class="reviews" role="region" aria-label="Avis clients">
-                        <div class="stars" aria-hidden="true">⭐⭐⭐⭐☆</div>
-                        <strong>4,9/5</strong> – Basé sur 213 avis
+                        <div class="stars-outer">
+                        <div class="stars-inner" style="width: 88%;"></div> </div>
+                        <strong>4,4/5</strong> – Basé sur 16 avis avis Google
                     </div>
                 </div>
                 
@@ -69,10 +72,10 @@
             </div>
         </section>
 
-        <section class="about" id="boucherie">
+        <section class="about" id="histoire">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">NOTRE HISTOIRE</span>
+                    <span class="about-tagline">NOTRE HISTOIRE</span>
                     <h2>La Boucherie Agadir</h2>
                 </div>
                 <div class="about-content">
@@ -116,9 +119,9 @@
         <section class="products" id="produits">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">NOTRE SÉLECTION</span>
+                    <span class="products-tagline">NOTRE SÉLECTION</span>
                     <h2>Nos Produits</h2>
-                    <p class="section-description">Découvrez notre gamme complète de viandes et spécialités</p>
+                    <p class="products-description">Découvrez notre gamme complète de viandes et spécialités</p>
                 </div>
                 <div class="products-grid">
                     <div class="product-card">
@@ -205,48 +208,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="promotions" id="promotions">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tagline">OFFRES SPÉCIALES</span>
-                    <h2>Promotions du Moment</h2>
-                </div>
-                <div class="promotions-grid">
-                    <div class="promo-card promo-large">
-                        <div class="promo-content">
-                            <span class="promo-badge">-20%</span>
-                            <h3>Pack Famille</h3>
-                            <p>Assortiment de viandes variées pour toute la famille. Idéal pour les repas de la semaine.</p>
-                            <div class="promo-price">
-                                <span class="old-price">89,90 €</span>
-                                <span class="new-price">71,90 €</span>
-                            </div>
-                            <button class="cta cta-white">Profiter de l'offre</button>
-                        </div>
-                        
-                    </div>
-                    <div class="promo-card">
-                        <span class="promo-badge">-15%</span>
-                        <h3>Week-end BBQ</h3>
-                        <p>Brochettes et saucisses pour vos barbecues</p>
-                        <div class="promo-price">
-                            <span class="old-price">24,90 €</span>
-                            <span class="new-price">21,15 €</span>
-                        </div>
-                        <button class="cta cta-white">Voir l'offre</button>
-                    </div>
-                    <div class="promo-card">
-                        <span class="promo-badge">-10%</span>
-                        <h3>Première Commande</h3>
-                        <p>Réduction spéciale pour les nouveaux clients</p>
-                        <div class="promo-price">
-                            <span class="new-price">Code: BIENVENUE10</span>
-                        </div>
-                        <button class="cta cta-white">Utiliser le code</button>
-                    </div>
+                <div class="product-footer-button">
+                    <a href="Site/Vues/Produit.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
                 </div>
             </div>
         </section>
@@ -254,49 +217,56 @@
         <section class="testimonials">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tagline">TÉMOIGNAGES</span>
+                    <span class="testimonials-tagline">TÉMOIGNAGES</span>
                     <h2>Ce que disent nos clients</h2>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 100%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "Excellente boucherie ! La qualité de la viande est remarquable et le service est toujours au rendez-vous. 
-                            Je recommande vivement."
+                            "Viande et service de qualité !
+                            Que du bonheur ."
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">M</div>
+                            <div class="author-avatar">C</div>
                             <div class="author-info">
-                                <div class="author-name">Marie Dubois</div>
-                                <div class="author-location">Client depuis 5 ans</div>
+                                <div class="author-name">Claude FUMENIA</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 80%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "La meilleure boucherie du quartier ! Les produits sont toujours frais et les conseils des bouchers 
-                            sont précieux. Un vrai plaisir."
+                            Client satisfait 
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar">J</div>
+                            <div class="author-avatar">N</div>
                             <div class="author-info">
-                                <div class="author-name">Jean Martin</div>
-                                <div class="author-location">Client depuis 3 ans</div>
+                                <div class="author-name">Noureddine EL MAAROUFI</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <div class="testimonial-stars">
+                            <div class="stars-outer">
+                                <div class="stars-inner" style="width: 100%;"></div>
+                            </div>
+                        </div>
                         <p class="testimonial-text">
-                            "Qualité exceptionnelle et prix raisonnables. Les plats préparés sont délicieux et la viande 
-                            est toujours tendre. Je ne vais nulle part ailleurs !"
+                            Client satisfait 
                         </p>
                         <div class="testimonial-author">
                             <div class="author-avatar">S</div>
                             <div class="author-info">
-                                <div class="author-name">Sophie Bernard</div>
-                                <div class="author-location">Client depuis 2 ans</div>
+                                <div class="author-name">Siham Aissa</div>
                             </div>
                         </div>
                     </div>
@@ -308,7 +278,7 @@
             <div class="container">
                 <div class="click-collect-content">
                     <div class="click-collect-text">
-                        <span class="section-tagline">SERVICE RAPIDE</span>
+                        <span class="click-collect-tagline">SERVICE RAPIDE</span>
                         <h2>Click & Collect</h2>
                         <p class="lead">
                             Commandez en ligne et récupérez vos produits frais en magasin. Simple, rapide et pratique !
@@ -331,7 +301,7 @@
                                 <span>Paiement en ligne sécurisé</span>
                             </li>
                         </ul>
-                        <button class="cta">Commander maintenant</button>
+                        <a href="Site/Vues/ClickAndCollect.php" class="cta">Commander maintenant</a>
                     </div>
                     <div class="click-collect-visual">
                         <div class="visual-card">
@@ -353,81 +323,74 @@
             </div>
         </section>
 
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tagline">CONTACTEZ-NOUS</span>
-                    <h2>Nous Contacter</h2>
-                    <p class="section-description">Une question ? Une demande spéciale ? N'hésitez pas à nous contacter.</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-icon">📍</div>
-                        <h3>Adresse</h3>
-                        <p>123 Rue de la Boucherie<br>75001 Paris, France</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">📞</div>
-                        <h3>Téléphone</h3>
-                        <p>01 23 45 67 89<br>Lun-Sam : 8h-19h</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">✉️</div>
-                        <h3>Email</h3>
-                        <p>contact@boucherieagadir.fr<br>Réponse sous 24h</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">🕒</div>
-                        <h3>Horaires</h3>
-                        <p>Lundi - Samedi : 8h - 19h<br>Dimanche : 9h - 13h</p>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nom complet</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="cta">Envoyer le message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
+    
+            <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                <h3>Boucherie Agadir</h3>
-                <p>Votre boucher de confiance depuis 1997</p>
+                    <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
+    
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
+                </div>
             </div>
+    
+            <!-- PLAN DU SITE -->
             <div class="footer-section">
-                <h4>Horaires</h4>
-                <p>Lun - Sam : 8h - 19h</p>
-                <p>Dimanche : 9h - 13h</p>
+                <h2>Plan du site</h2>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#histoire">Notre histoire</a></li>
+                    <li><a href="#produits">Nos produits</a></li>
+                    <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="Site/Vues/Contact.php">Contact</a></li>
+                </ul>
             </div>
+    
+            <!-- HORAIRES -->
             <div class="footer-section">
-                <h4>Contact</h4>
-                <p>Email : contact@boucherieagadir.fr</p>
-                <p>Tél : 01 23 45 67 89</p>
+                <h2>Horaires</h2>
+                <p>Lundi : Fermé</p>
+                <p>Mardi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                <p>Mercredi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                <p>Jeudi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
+                <p>Samedi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                <p>Dimanche : Fermé</p>
             </div>
+    
+            <!-- CONTACT -->
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <p>Ben20mohamed97@gmail.com</p>
+                <p>06 27 29 85 56</p>
+                <p>14 Pl. du Béarn, 64150 Mourenx</p>
+            </div>
+    
+            <!-- GOOGLE MAPS -->
+            <div class="footer-section footer-map">
+                <h2>Nous trouver</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.2743678430566!2d-0.6325365231790336!3d43.37128687111703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f651ffc7de2b%3A0x499ef61367106771!2s14%20Pl.%20du%20B%C3%A9arn%2C%2064150%20Mourenx!5e0!3m2!1sfr!2sfr!4v1768483752878!5m2!1sfr!2sfr" 
+                loading="lazy" >
+                </iframe>
+            </div>
+    
         </div>
+    
+        <!-- BOTTOM -->
         <div class="footer-bottom">
-            <p>&copy; 2024 Boucherie Agadir. Tous droits réservés.</p>
+            <p class="copyright">
+                Tous droits réservés • 
+                <a href="#">CGU</a> • 
+                <a href="#">RGPD</a> • 
+                <a href="#">Mentions légales</a>
+            </p>
+            
         </div>
     </footer>
 
@@ -457,42 +420,105 @@
 		</div>
 
     <script>
-        // Menu mobile toggle
+        // Menu mobile toggle amélioré
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
+        const body = document.body;
         
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('nav-open');
-            menuToggle.classList.toggle('active');
-        });
+        if (menuToggle && nav) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                const isOpen = !isExpanded;
+                
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                nav.classList.toggle('nav-open');
+                menuToggle.classList.toggle('active');
+                
+                // Empêcher le scroll du body quand le menu est ouvert
+                if (isOpen) {
+                    body.classList.add('menu-open');
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+            
+            // Fermer le menu quand on clique sur un lien
+            const navLinks = nav.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        nav.classList.remove('nav-open');
+                        menuToggle.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Fermer le menu quand on redimensionne la fenêtre
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    nav.classList.remove('nav-open');
+                    menuToggle.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+        }
 
-        // Sticky header
+        // Sticky header amélioré
         const header = document.querySelector('.header');
-        let lastScroll = 0;
+        if (header) {
+            let lastScroll = 0;
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            lastScroll = currentScroll;
-        });
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+                lastScroll = currentScroll;
+            }, { passive: true });
+        }
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links amélioré
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '#accueil') {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    e.preventDefault();
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
+
+                const note = 4.4;
+                const starTotal = 5;
+
+                // Calcul du pourcentage
+                const starPercentage = (note / starTotal) * 100;
+
+                // Application de la largeur à la couche de remplissage
+                document.querySelector('.stars-inner').style.width = starPercentage + '%';
             });
         });
     </script>

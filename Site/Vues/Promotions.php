@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Contact</title>
+    <title>Promotions</title>
     <link rel="stylesheet" href="../Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +12,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-               <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+              <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -24,7 +24,7 @@
             <nav class="nav" role="navigation" aria-label="Navigation principale">
                 <a href="../../index.php#histoire" class="nav-link">Notre histoire</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
-                <a href="Promotions.php" class="nav-link">Promotions</a>
+                <a href="#promotions" class="nav-link">Promotions</a>
                 <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
                 <a href="Contact.php" class="nav-link">Contact</a>
             </nav>
@@ -38,132 +38,56 @@
         </div>
     </header>
 
-    <main>
-
-        <!-- HERO CONTACT -->
-       
-        </section>
-    
-        <!-- SECTION CONTACT -->
-        <section class="contact">
+    <section class="promotions" id="promotions">
             <div class="container">
-    
                 <div class="section-header">
-                    <h2>Nous contacter</h2>
-                    <p class="section-description">
-                        Passez nous voir en magasin ou envoyez-nous un message via le formulaire ci-dessous.
-                    </p>
-                    
+                    <span class="section-tagline">OFFRES SPÉCIALES</span>
+                    <h2>Promotions du Moment</h2>
                 </div>
-    
-                <div class="contact-grid">
-    
-                    <!-- INFOS CONTACT -->
-                    <div class="contact-info">
-    
-                        <div class="visual-card">
-                            <div class="step">
-                                <img src="../images/location.png" alt="Localisation" ></a>
-                                <div class="step-text">
-                                    14 Pl. du Béarn 64150 Mourenx
-                                </div>
+                <div class="promotions-grid">
+                    <div class="promo-card promo-large">
+                        <div class="promo-content">
+                            <span class="promo-badge">-20%</span>
+                            <h3>Pack Famille</h3>
+                            <p>Assortiment de viandes variées pour toute la famille. Idéal pour les repas de la semaine.</p>
+                            <div class="promo-price">
+                                <span class="old-price">89,90 €</span>
+                                <span class="new-price">71,90 €</span>
                             </div>
-    
-                            <div class="step">
-                                <img src="../images/telephone.png" alt="Téléphone" ></a>
-                                <div class="step-text">
-                                    06 27 29 85 56
-                                </div>
-                            </div>
-    
-                            <div class="step">
-                                <img src="../images/mail.png" alt="Email" ></a>
-                                <div class="step-text">
-                                    Ben20mohamed97@gmail.com
-                                </div>
-                            </div>
-    
-                            <div class="step">
-                                <img src="../images/horaires.png" alt="Horaires" ></a>
-                                <div class="step-text">
-                                    Mardi au Samedi<br>
-                                    09h30 - 13h00 / 15h30 - 19h00
-                                </div>
-                            </div>
+                            <button class="cta cta-white">Profiter de l'offre</button>
                         </div>
-
-                      <!-- FORMULAIRE -->
-<!-- FORMULAIRE -->
-<!-- FORMULAIRE CONTACT FINAL -->
-<div class="contact-form-container visual-card">
-    <form id="contact-form" action="https://formsubmit.co/undeuxundeuxtestetest@gmail.com" method="POST" class="contact-form">
-
-        <div class="form-row">
-            <input type="text" name="name" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre email" required>
-        </div>
-
-        <div class="form-row">
-            <input type="tel" name="phone" placeholder="Téléphone">
-            <input type="text" name="subject" placeholder="Sujet">
-        </div>
-
-        <textarea rows="6" name="message" placeholder="Votre message..." required></textarea>
-
-        <button type="submit" class="cta">Envoyer le message</button>
-
-        <!-- protection anti-spam désactivée pour test -->
-        <input type="hidden" name="_captcha" value="false">
-    </form>
-
-    <!-- Message de confirmation -->
-    <div id="form-message" style="display:none; color:green; margin-top:10px;">
-        Merci ! Votre message a été envoyé avec succès.
-    </div>
-</div>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault(); // empêche le rechargement
-    const form = this;
-    
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-    }).then(response => {
-        if(response.ok){
-            document.getElementById('form-message').style.display = 'block';
-            form.reset();
-        } else {
-            alert('Une erreur est survenue, veuillez réessayer.');
-        }
-    }).catch(error => {
-        alert('Une erreur est survenue, veuillez réessayer.');
-    });
-});
-</script>
-
-
-
                         
-    
-                    
                     </div>
-    
+                    <div class="promo-card">
+                        <span class="promo-badge">-15%</span>
+                        <h3>Week-end BBQ</h3>
+                        <p>Brochettes et saucisses pour vos barbecues</p>
+                        <div class="promo-price">
+                            <span class="old-price">24,90 €</span>
+                            <span class="new-price">21,15 €</span>
+                        </div>
+                        <button class="cta cta-white">Voir l'offre</button>
+                    </div>
+                    <div class="promo-card">
+                        <span class="promo-badge">-10%</span>
+                        <h3>Première Commande</h3>
+                        <p>Réduction spéciale pour les nouveaux clients</p>
+                        <div class="promo-price">
+                            <span class="new-price">Code: BIENVENUE10</span>
+                        </div>
+                        <button class="cta cta-white">Utiliser le code</button>
+                    </div>
                 </div>
-    
             </div>
         </section>
-    
-    </main>
-    
 
-    <footer class="footer" role="contentinfo">
+
+     <footer class="footer" role="contentinfo">
         <div class="footer-container">
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="60px" >
+                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
@@ -227,8 +151,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
             </p>
         </div>
     </footer>
-    
-
     <script>
         // Menu mobile toggle
         const menuToggle = document.querySelector('.menu-toggle');

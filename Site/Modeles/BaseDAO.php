@@ -1,5 +1,8 @@
 <?php
 
+// Inclusion du fichier de configuration de la base de données
+require_once __DIR__ . '/../../db.php';
+
 /**
  * Modifications :
  * - Passage des attributs et méthodes de la classe Base en visibilité protected (utilisable que par la classe fille)
