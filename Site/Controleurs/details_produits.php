@@ -1,6 +1,6 @@
 <?php
 // Site/Controleurs/details_produit.php
-require_once '../config.php';
+require_once __DIR__ . '/../../config.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("Produit invalide");

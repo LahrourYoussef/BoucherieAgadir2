@@ -2,7 +2,7 @@
 // Site/Controleurs/liste_produits.php
 
 // 1. On appelle la connexion (Modèle)
-require_once '../config.php'; 
+require_once __DIR__ . '/../../config.php'; 
 
 // 2. Logique de récupération des données
 try {
@@ -24,4 +24,4 @@ try {
 }
 
 // 3. On appelle la Vue pour afficher les données
-include '../Vues/vueClient.php';
+include '../Vues/liste_produit.php';

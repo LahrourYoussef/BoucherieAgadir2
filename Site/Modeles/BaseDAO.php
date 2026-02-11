@@ -1,7 +1,7 @@
 <?php
 
 // Inclusion du fichier de configuration de la base de données
-require_once __DIR__ . '/../../db.php';
+require_once __DIR__ . '/../../config.php';
 
 /**
  * Modifications :

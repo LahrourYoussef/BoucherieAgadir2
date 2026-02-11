@@ -55,7 +55,7 @@ $posts = $stmt->fetchAll();
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
                 <a href="#histoire" class="nav-link">Notre histoire</a>
-                <a href="#produits" class="nav-link">Nos produits</a>
+                <a href="Site/Controleurs/liste_produits.php">Nos produits</a>
                 <a href="Site/Vues/Promotions.php" class="nav-link">Promotions</a>
                 <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
                 <a href="Site/Vues/Contact.php" class="nav-link">Contact</a>
