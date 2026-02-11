@@ -13,7 +13,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-              <a href="../../index.php"><img src="../images/Logo.png" alt="Logo Boucherie Agadir" width="45px" ></a>
+              <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -32,7 +32,7 @@
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="../images/www.apple.com-27.svg" alt="Panier" class="icon" />
+                    <img src="../images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
             </div>
@@ -137,18 +137,11 @@
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                <div class="logo" aria-label="Boucherie Agadir">
-                  <a href="../../index.php"><img src="../images/Logo.png" alt="Logo Boucherie Agadir" width="45px" ></a>
-                </div>
-                <p>Votre boucher de confiance depuis 1997</p>
+                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/boucherie_agadir_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
-                        <img src="../images/instagram.svg" alt="Logo Instagram" width="33px" height="33px">
-                    </a>
-                    <a href="https://www.tiktok.com/@boucherie.agadir.64?is_from_webapp=1&sender_device=pc" aria-label="TikTok">
-                        <img src="../images/tiktok.svg" alt="Logo TikTok" width="30px" height="30px">
-                    </a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="../images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -156,11 +149,12 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Produits</a></li>
-                    <li><a href="#">Click & Collect</a></li>
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="../../index.php#accueil">Accueil</a></li>
+                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
+                    <li><a href="../../index.php#produits">Nos produits</a></li>
+                    <li><a href="Promotions.php">Promotions</a></li>
+                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
                 </ul>
             </div>
     
@@ -179,9 +173,9 @@
             <!-- CONTACT -->
             <div class="footer-section">
                 <h2>Contact</h2>
-                <p>Email : Ben20mohamed97@gmail.com</p>
-                <p>Tél : 06 27 29 85 56</p>
-                <p>📍 14 Pl. du Béarn, 64150 Mourenx</p>
+                <p>Ben20mohamed97@gmail.com</p>
+                <p>06 27 29 85 56</p>
+                <p>14 Pl. du Béarn, 64150 Mourenx</p>
             </div>
     
             <!-- GOOGLE MAPS -->
@@ -196,15 +190,13 @@
     
         <!-- BOTTOM -->
         <div class="footer-bottom">
-            <p>
-                © 2024 Boucherie Agadir — Tous droits réservés • 
+            <p class="copyright">
+                Tous droits réservés • 
                 <a href="#">CGU</a> • 
                 <a href="#">RGPD</a> • 
                 <a href="#">Mentions légales</a>
             </p>
-            <p class="dev">
-                Développé par <strong>BTS SIO 2</strong>
-            </p>
+            
         </div>
     </footer>
     

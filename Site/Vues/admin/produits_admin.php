@@ -1,14 +1,5 @@
 <?php
-// ================== CONNEXION BDD ==================
-$pdo = new PDO(
-    "mysql:host=localhost;dbname=gallery;charset=utf8",
-    "root",
-    "root", // selon ta config MAMP
-    [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-    ]
-);
+require_once '../../Modeles/BaseDAO.php';
 
 // ================== RÉCUPÉRATION DES PRODUITS ==================
 $stmt = $pdo->query("
@@ -46,7 +37,7 @@ $posts = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
     <title>Accueil</title>
-    <link rel="stylesheet" href="./Site/Styles/tyle.css" />
+    <link rel="stylesheet" href="../../Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>

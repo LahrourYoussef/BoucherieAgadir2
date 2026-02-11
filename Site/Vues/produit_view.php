@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Promotions</title>
-    <link rel="stylesheet" href="../Styles/style.css" />
+    <title><?= htmlspecialchars($produit['Nom_Produit']) ?> - Boucherie Agadir</title>
+    <link rel="stylesheet" href="../Styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        a { text-decoration: none; }
+        .product-page { display:grid; grid-template-columns:1fr 1fr; gap:40px; padding:50px; }
+        .product-main-img { width:100%; border-radius:20px; }
+        .product-right h1 { font-size:32px; }
+        .product-actions { margin-top:30px; display:flex; justify-content: space-between; }
+        .btn-cart { padding:12px 20px; background:#D10F1C; color:#fff; border:none; border-radius:20px; cursor:pointer; text-decoration: none; }
+        .btn-back { padding:12px 20px; border:1px solid #ccc; border-radius:20px; text-decoration:none; color:#111; }
+        
+        @media (max-width: 768px) {
+            .product-page { grid-template-columns: 1fr; padding: 20px; }
+        }
+    </style>
 </head>
 <body>
+
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-              <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+                <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" > 
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="../../index.php#histoire" class="nav-link">Notre histoire</a>
+                <a href="#boucherie" class="nav-link">La Boucherie</a>
                 <a href="#produits" class="nav-link">Nos produits</a>
                 <a href="#promotions" class="nav-link">Promotions</a>
-                <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="Contact.php" class="nav-link">Contact</a>
+                <a href="#click-collect" class="nav-link">Click & Collect</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
@@ -38,51 +49,42 @@
         </div>
     </header>
 
-    <section class="promotions" id="promotions">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tagline">OFFRES SPÉCIALES</span>
-                    <h2>Promotions du Moment</h2>
-                </div>
-                <div class="promotions-grid">
-                    <div class="promo-card promo-large">
-                        <div class="promo-content">
-                            <span class="promo-badge">-20%</span>
-                            <h3>Pack Famille</h3>
-                            <p>Assortiment de viandes variées pour toute la famille. Idéal pour les repas de la semaine.</p>
-                            <div class="promo-price">
-                                <span class="old-price">89,90 €</span>
-                                <span class="new-price">71,90 €</span>
-                            </div>
-                            <button class="cta cta-white">Profiter de l'offre</button>
-                        </div>
-                        
-                    </div>
-                    <div class="promo-card">
-                        <span class="promo-badge">-15%</span>
-                        <h3>Week-end BBQ</h3>
-                        <p>Brochettes et saucisses pour vos barbecues</p>
-                        <div class="promo-price">
-                            <span class="old-price">24,90 €</span>
-                            <span class="new-price">21,15 €</span>
-                        </div>
-                        <button class="cta cta-white">Voir l'offre</button>
-                    </div>
-                    <div class="promo-card">
-                        <span class="promo-badge">-10%</span>
-                        <h3>Première Commande</h3>
-                        <p>Réduction spéciale pour les nouveaux clients</p>
-                        <div class="promo-price">
-                            <span class="new-price">Code: BIENVENUE10</span>
-                        </div>
-                        <button class="cta cta-white">Utiliser le code</button>
-                    </div>
-                </div>
+    <main>
+        <div class="product-page">
+            <div class="product-left">
+                <img src="../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-main-img">
             </div>
-        </section>
+            
+            <section class="product-page-section">
+                <div class="product-right">
+                    <h1><?= htmlspecialchars($produit['Nom_Produit']) ?></h1>
+                    <p class="product-description"><?= htmlspecialchars($produit['Description_Produit']) ?></p>
 
+                    <div class="product-info">
+                        <p><b>Prix :</b> <?= htmlspecialchars($produit['Prix_Unitaire']) ?> € / <?= htmlspecialchars($produit['Unite_Vente']) ?></p>
 
-     <footer class="footer" role="contentinfo">
+                        <?php if ($produit['Prix_KG']): ?>
+                            <p><b>Prix au KG :</b> <?= htmlspecialchars($produit['Prix_KG']) ?> €</p>
+                        <?php endif; ?>
+
+                        <p><b>Origine :</b> <?= htmlspecialchars($produit['Pays']) ?></p>
+                        <p><b>Type :</b> <?= htmlspecialchars($produit['Nom_Type_Produit']) ?></p>
+                        <p><b>Viande :</b> <?= htmlspecialchars($produit['Nom_Type_Viande']) ?></p>
+                        <p><b>Catégorie :</b> <?= htmlspecialchars($produit['Nom_Sous_Categorie']) ?></p>
+                    </div>
+
+                    <div class="product-actions">
+                        <a href="../Controleurs/add_to_cart.php?id=<?= $produit['Id_Produit'] ?>" class="btn-cart">
+                            Ajouter au panier
+                        </a>
+                        <a href="../../index.php" class="btn-back">← Retour boutique</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
     
             <!-- LOGO + DESCRIPTION -->
@@ -149,44 +151,21 @@
             
         </div>
     </footer>
+
     <script>
-        // Menu mobile toggle
+        // Menu mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
-        
         menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
             nav.classList.toggle('nav-open');
             menuToggle.classList.toggle('active');
         });
 
-        // Sticky header
+        // Header scroll
         const header = document.querySelector('.header');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            lastScroll = currentScroll;
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+            if (window.pageYOffset > 100) header.classList.add('header-scrolled');
+            else header.classList.remove('header-scrolled');
         });
     </script>
 </body>
