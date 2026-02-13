@@ -485,7 +485,7 @@ a:hover {
 .section-tagline {
   font-size: 14px;
   letter-spacing: 3px;
-  color: #1a1a1a;
+  color: #f5f2ed;
   text-transform: uppercase;
   font-weight: 600;
   display: inline-block;
@@ -902,136 +902,125 @@ a:hover {
 /* ==========================================================================
    9. SECTION: FOOTER & CONTACT (BLANC)
    ========================================================================== */
-
-.contact {
-  padding: 80px 0;
-  background: #d10f1c;
-}
-
 .footer {
-  background: var(--white); /* FORCE LE BLANC */
-  color: var(--text-dark);
-  padding: 60px 20px 20px;
-}
+            background: #ffffff;
+            color: #1a1a1a;
+            padding: 80px 0 30px;
+            font-family: 'Inter', sans-serif;
+            border-top: 1px solid #f0f0f0;
+        }
 
-/* Structure du Footer (PC) */
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
-  transform: translateX(-18px);
-}
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
 
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-}
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
 
-.footer-section h2,
-.footer-section h3,
-.footer-section h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
+        .footer-section h2 {
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+        }
 
-.footer-section p {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--text-gray);
-  margin-bottom: 10px;
-}
+        .footer-section p, .footer-section ul li a {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.footer-section a {
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--text-gray);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-section a:hover {
-  color: var(--primary-color);
-}
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+        .footer-section ul li a:hover {
+            color: #d10f1c;
+            padding-left: 5px;
+        }
 
-.footer-section ul li {
-  margin-bottom: 8px;
-}
+        /* --- BLOC LOGO & RESEAUX --- */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-/* Logo et Réseaux (PC) */
-.footer-section:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
-  min-width: 180px;
-  flex-shrink: 0;
-}
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
 
-.footer-section:first-child img {
-  margin-bottom: 6px;
-  display: block;
-}
+        .footer-socials a img {
+            transition: transform 0.3s ease;
+        }
 
-.footer-socials {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
+        .footer-socials a:hover img {
+            transform: translateY(-3px);
+        }
 
-.footer-socials a {
-  font-size: 18px;
-  color: var(--text-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        /* --- LE DUO CONTACT + MAP (CÔTE À CÔTE) --- */
+        .footer-side-by-side {
+            display: flex !important;
+            flex-direction: row !important;
+            flex: 2.5; 
+            gap: 20px;
+            min-width: 320px;
+        }
 
-.footer-socials a img {
-  transition: transform 0.2s ease;
-}
+        .footer-side-by-side .footer-section {
+            flex: 1;
+            min-width: 0;
+        }
 
-.footer-socials a:hover img {
-  transform: scale(1.15);
-}
+        .footer-map iframe {
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
 
-/* Autres sections Footer (PC) */
-.footer-section:not(:first-child) {
-  text-align: left;
-}
+        /* --- BARRE DE FIN --- */
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 60px auto 0;
+            padding: 25px 40px 0;
+            border-top: 1px solid #eeeeee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-.footer iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  border: none;
-}
+        .copyright { font-size: 13px; color: #999; }
+        .footer-legal a { font-size: 13px; color: #999; margin-left: 20px; text-decoration: none; }
 
-.footer-bottom {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 2px solid #eeeeee;
-  text-align: center;
-}
-
-.footer-bottom p,
-.footer-bottom a {
-  color: #000;
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .footer-container { flex-direction: column; text-align: center; padding: 0 20px; }
+            .footer-socials { justify-content: center; }
+            .footer-side-by-side { text-align: left; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
 }
 
 /* ==========================================================================
@@ -2202,4 +2191,109 @@ body {
 
 main {
   flex-grow: 1;
+}
+/* ==========================================================================
+   STYLISATION DE LA VUE LISTE_PRODUIT
+   ========================================================================== */
+
+.products-section {
+  padding: 60px 0;
+  background: var(--bg-light); /* Fond rouge comme le Hero */
+}
+
+.products-section h1 {
+  color: var(--white);
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+/* Grille de la galerie */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Carte produit individuelle */
+.gallery .card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative; /* Pour annuler le float des images du hero */
+  transform: none;
+  animation: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Image du produit */
+.product-img {
+  width: 100% !important; /* Force la largeur sur 100% */
+  height: 250px !important;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
+/* Contenu textuel */
+.product-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  color: var(--text-dark);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Prix et Bouton */
+.product-meta1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.product-meta {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+.btn-view {
+  background: var(--primary-color);
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-view:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
 }

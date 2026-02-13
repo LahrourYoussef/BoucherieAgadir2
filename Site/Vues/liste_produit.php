@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
+    <title>Boucherie Agadir - Tous nos produits</title>
     <link rel="stylesheet" href="/Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     
-    <header class="header" role="banner">
+     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+               <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -24,7 +23,7 @@
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
                 <a href="/index.php#histoire" class="nav-link">Notre histoire</a>
-                <a href="/Site/Controleurs/liste_produits.php">Nos produits</a>
+                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
                 <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
                 <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
                 <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
@@ -32,43 +31,33 @@
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="/Site/images/panier.png" alt="Panier" class="icon-cart" />
+                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
-                </button>
-                <button class="cart-button" aria-label="Mon Compte">
-                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
                 </button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main style="padding-top: 50px;">
         <section class="products-section">
-            <center style="margin-bottom: 2rem;"><h1>Liste des produits</h1></center>
-
+            <center><h1>Tous nos produits</h1></center>
             <div class="gallery">
-                <?php if (!empty($posts)): ?>
+                <?php if (!empty($posts)): // $posts vient du contrôleur ?>
                     <?php foreach ($posts as $produit): ?>
                     <div class="card">
-                        <img src="/Site/uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>"
-                             alt="photo produit"
-                             class="product-img">
-
+                        <img src="/Site/uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-img">
                         <div class="product-info">  
                             <h3 class="product-title"><?= htmlspecialchars($produit['Nom_Produit']) ?></h3>
                             <p class="product-desc"><?= htmlspecialchars($produit['Description_Produit']) ?></p>
-
                             <div class="product-meta1">
-                                <p class="product-meta"><?= htmlspecialchars($produit['Prix_Unitaire']) ?> € / <?= htmlspecialchars($produit['Unite_Vente']) ?></p>
-                                <a href="/Site/Controleurs/details_produits.php?id=<?= $produit['Id_Produit'] ?>" class="btn-view">
-                                    Voir le produit
-                                </a>
+                                <p class="product-meta"><?= htmlspecialchars($produit['Prix_Unitaire']) ?> €</p>
+                                <a href="/Site/Controleurs/details_produits.php?id=<?= $produit['Id_Produit'] ?>" class="btn-view">Détails</a>
                             </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p style="text-align:center; margin-bottom: 5rem;">Aucun produit disponible pour le moment.</p>
+                    <p style="text-align:center;">Aucun produit trouvé.</p>
                 <?php endif; ?>
             </div>
         </section>
@@ -141,28 +130,5 @@
             
         </div>
     </footer>
-
-    <script>
-        // Menu mobile toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('nav-open');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Sticky header
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-    </script>
 </body>
 </html>

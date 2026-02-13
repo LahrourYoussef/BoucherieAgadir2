@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Mon panier - Boucherie Agadir</title>
-<link rel="stylesheet" href="../Styles/style.css">
+<link rel="stylesheet" href="/Site/Styles/style.css">
 
 <style>
 /* ... Tes styles CSS internes restent identiques ... */
@@ -36,10 +36,41 @@ h1{ text-align:center; margin:20px 0; }
 
 </head>
 <body>
+    <header class="header" role="banner">
+        <div class="header-container">
+            <div class="logo" aria-label="Boucherie Agadir">
+              <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav" role="navigation" aria-label="Navigation principale">
+                <a href="/index.php#histoire" class="nav-link">La Boucherie</a>
+                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
+                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="icons">
+                <button class="cart-button" aria-label="Panier d'achat">
+                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
+                    <span class="cart-badge" aria-hidden="true">0</span>
+                </button>
+                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                </a>
+            </div>
+        </div>
+    </header>
 
 <h1>🛒 Mon panier</h1>
 
-<a href="../../index.php" class="back-btn">← Retour boutique</a>
+<a href="/Site/Controleurs/liste_produits.php" class="back-btn">← Retour boutique</a>
 
 <?php if (empty($cart)): ?>
     <p style="text-align:center; margin-top:20px;">Votre panier est vide</p>
@@ -63,14 +94,14 @@ h1{ text-align:center; margin:20px 0; }
             ?>
             <tr>
                 <td class="cart-product">
-                    <img src="../uploads/<?= htmlspecialchars($item['photo']) ?>">
+                    <img src="/Site/uploads/<?= htmlspecialchars($item['photo']) ?>">
                     <div><b><?= htmlspecialchars($item['nom']) ?></b></div>
                 </td>
 
                 <td><?= number_format($item['prix'], 2) ?> €</td>
 
                 <td>
-                    <form action="../Controleurs/update_cart.php" method="POST" class="qte-form">
+                    <form action="/Site/Controleurs/update_cart.php" method="POST" class="qte-form">
                         <input type="hidden" name="id" value="<?= $item['id'] ?>">
                         <input type="number" name="quantite" value="<?= $item['quantite'] ?>" min="1">
                         <button type="submit">↻</button>
@@ -80,7 +111,7 @@ h1{ text-align:center; margin:20px 0; }
                 <td><?= number_format($ligne_total, 2) ?> €</td>
 
                 <td>
-                    <a href="../Controleurs/remove_from_cart.php?id=<?= $item['id'] ?>" class="delete-btn">❌</a>
+                    <a href="/Site/Controleurs/remove_from_cart.php?id=<?= $item['id'] ?>" class="delete-btn">❌</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -93,7 +124,7 @@ h1{ text-align:center; margin:20px 0; }
     </div>
 
     <div class="cart-right">
-        <form action="../Controleurs/checkout.php" method="POST" class="client-form">
+        <form action="/Site/Controleurs/checkout.php" method="POST" class="client-form">
             <h2>🧾 Informations client</h2>
             <div class="form-group">
                 <label>Nom</label>
@@ -134,7 +165,7 @@ h1{ text-align:center; margin:20px 0; }
 
             <input type="hidden" name="total" value="<?= $total ?>">
             <button type="submit" class="pay-btn">🧾 Valider la commande</button>
-            <a href="../../index.php" class="back-btn" style="text-align:center; display:block; margin-top:15px;">← Retour boutique</a>
+            <a href="/index.php" class="back-btn" style="text-align:center; display:block; margin-top:15px;">← Retour boutique</a>
         </form>
     </div>
 </div>
@@ -146,11 +177,11 @@ h1{ text-align:center; margin:20px 0; }
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
+                    <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
-                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="../images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="/Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="/Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -158,12 +189,12 @@ h1{ text-align:center; margin:20px 0; }
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="../../index.php#accueil">Accueil</a></li>
-                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
-                    <li><a href="../../index.php#produits">Nos produits</a></li>
-                    <li><a href="Promotions.php">Promotions</a></li>
-                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
-                    <li><a href="Contact.php">Contact</a></li>
+                    <li><a href="/index.php#accueil">Accueil</a></li>
+                    <li><a href="/index.php#histoire">Notre histoire</a></li>
+                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="/Site/Vues/Contact.php">Contact</a></li>
                 </ul>
             </div>
     

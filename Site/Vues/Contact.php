@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
     <title>Contact</title>
-    <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="/Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-               <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+               <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -22,18 +22,21 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="../../index.php#histoire" class="nav-link">Notre histoire</a>
-                <a href="#produits" class="nav-link">Nos produits</a>
-                <a href="Promotions.php" class="nav-link">Promotions</a>
-                <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="Contact.php" class="nav-link">Contact</a>
+                <a href="/index.php#histoire" class="nav-link">Notre histoire</a>
+                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
+                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="../images/panier.svg" alt="Panier" class="icon" />
+                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
+                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                </a>
             </div>
         </div>
     </header>
@@ -63,28 +66,28 @@
     
                         <div class="visual-card">
                             <div class="step">
-                                <img src="../images/location.png" alt="Localisation" ></a>
+                                <img src="/Site/images/location.png" alt="Localisation" ></a>
                                 <div class="step-text">
                                     14 Pl. du Béarn 64150 Mourenx
                                 </div>
                             </div>
     
                             <div class="step">
-                                <img src="../images/telephone.png" alt="Téléphone" ></a>
+                                <img src="/Site/images/telephone.png" alt="Téléphone" ></a>
                                 <div class="step-text">
                                     06 27 29 85 56
                                 </div>
                             </div>
     
                             <div class="step">
-                                <img src="../images/mail.png" alt="Email" ></a>
+                                <img src="/Site/images/mail.png" alt="Email" ></a>
                                 <div class="step-text">
                                     Ben20mohamed97@gmail.com
                                 </div>
                             </div>
     
                             <div class="step">
-                                <img src="../images/horaires.png" alt="Horaires" ></a>
+                                <img src="/Site/images/horaires.png" alt="Horaires" ></a>
                                 <div class="step-text">
                                     Mardi au Samedi<br>
                                     09h30 - 13h00 / 15h30 - 19h00

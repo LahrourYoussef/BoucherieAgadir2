@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($produit['Nom_Produit']) ?> - Boucherie Agadir</title>
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="/Site/Styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         a { text-decoration: none; }
@@ -25,7 +25,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" > 
+                <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -33,18 +33,21 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#boucherie" class="nav-link">La Boucherie</a>
-                <a href="#produits" class="nav-link">Nos produits</a>
-                <a href="#promotions" class="nav-link">Promotions</a>
-                <a href="#click-collect" class="nav-link">Click & Collect</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="/index.php#histoire" class="nav-link">La Boucherie</a>
+                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
+                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="../images/panier.svg" alt="Panier" class="icon" />
+                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
+                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                </a>
             </div>
         </div>
     </header>
@@ -52,7 +55,7 @@
     <main>
         <div class="product-page">
             <div class="product-left">
-                <img src="../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-main-img">
+                <img src="/Site/uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-main-img">
             </div>
             
             <section class="product-page-section">
@@ -74,10 +77,10 @@
                     </div>
 
                     <div class="product-actions">
-                        <a href="../Controleurs/add_to_cart.php?id=<?= $produit['Id_Produit'] ?>" class="btn-cart">
+                        <a href="/Site/Controleurs/add_to_cart.php?id=<?= $produit['Id_Produit'] ?>" class="btn-cart">
                             Ajouter au panier
                         </a>
-                        <a href="../../index.php" class="btn-back">← Retour boutique</a>
+                        <a href="/Site/Controleurs/liste_produits.php" class="btn-back">← Retour boutique</a>
                     </div>
                 </div>
             </section>
@@ -89,11 +92,11 @@
     
             <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
-                    <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
+                    <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="../images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
-                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="../images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="/Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="/Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
@@ -101,12 +104,12 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="../../index.php#accueil">Accueil</a></li>
-                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
-                    <li><a href="../../index.php#produits">Nos produits</a></li>
-                    <li><a href="Promotions.php">Promotions</a></li>
-                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
-                    <li><a href="Contact.php">Contact</a></li>
+                    <li><a href="/index.php#accueil">Accueil</a></li>
+                    <li><a href="/index.php#histoire">Notre histoire</a></li>
+                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="/Site/Vues/Contact.php">Contact</a></li>
                 </ul>
             </div>
     

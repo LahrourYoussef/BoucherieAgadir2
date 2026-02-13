@@ -116,103 +116,51 @@
             </div>
         </section>
 
-        <section class="products" id="produits">
-            <div class="container">
-                <div class="section-header">
-                    <span class="products-tagline">NOTRE SÉLECTION</span>
-                    <h2>Nos Produits</h2>
-                    <p class="products-description">Découvrez notre gamme complète de viandes et spécialités</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande1.jpg" alt="Bœuf premium" loading="lazy">
-                            <span class="product-badge">Nouveau</span>
-                        </div>
-                        <div class="product-info">
-                            <h3>Bœuf Premium</h3>
-                            <p>Viande de bœuf sélectionnée, tendre et savoureuse</p>
-                            <div class="product-footer">
-                                <span class="product-price">24,90 € / kg</span>
-                                <button class="product-btn">Ajouter</button>
+    <section class="products" id="produits">
+    <div class="container">
+        <div class="section-header">
+            <span class="products-tagline">NOTRE SÉLECTION</span>
+            <h2>Nos Produits</h2>
+            <p class="products-description">Découvrez nos dernières nouveautés .</p>
+        </div>
+
+        <div class="products-grid">
+            <?php
+            try {
+                require_once 'config.php'; // Connexion à la base
+                // On récupère uniquement les 3 derniers produits
+                $stmt = $pdo->query("SELECT * FROM Produit ORDER BY Id_Produit DESC LIMIT 3");
+                $home_products = $stmt->fetchAll();
+
+                if (!empty($home_products)): 
+                    foreach ($home_products as $produit): ?>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="Site/uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" alt="<?= htmlspecialchars($produit['Nom_Produit']) ?>">
+                            </div>
+                            <div class="product-info">
+                                <h3><?= htmlspecialchars($produit['Nom_Produit']) ?></h3>
+                                <p><?= htmlspecialchars($produit['Description_Produit']) ?></p>
+                                <div class="product-footer">
+                                    <span class="product-price"><?= htmlspecialchars($produit['Prix_Unitaire']) ?> € / <?= htmlspecialchars($produit['Unite_Vente']) ?></span>
+                                    <a href="Site/Controleurs/details_produits.php?id=<?= $produit['Id_Produit'] ?>" class="product-btn">Détails</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande2.webp" alt="Agneau de qualité" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3>Agneau de Qualité</h3>
-                            <p>Gigot et côtelettes d'agneau, élevage local</p>
-                            <div class="product-footer">
-                                <span class="product-price">18,50 € / kg</span>
-                                <button class="product-btn">Ajouter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande1.jpg" alt="Porc fermier" loading="lazy">
-                            <span class="product-badge promo">-15%</span>
-                        </div>
-                        <div class="product-info">
-                            <h3>Porc Fermier</h3>
-                            <p>Viande de porc élevée en plein air, goût authentique</p>
-                            <div class="product-footer">
-                                <span class="product-price">
-                                    <span class="old-price">16,90 €</span>
-                                    14,35 € / kg
-                                </span>
-                                <button class="product-btn">Ajouter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande2.webp" alt="Volaille bio" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3>Volaille Bio</h3>
-                            <p>Poulet et dinde certifiés bio, élevage responsable</p>
-                            <div class="product-footer">
-                                <span class="product-price">12,90 € / kg</span>
-                                <button class="product-btn">Ajouter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande1.jpg" alt="Charcuterie artisanale" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3>Charcuterie Artisanale</h3>
-                            <p>Saucissons, jambons et terrines maison</p>
-                            <div class="product-footer">
-                                <span class="product-price">À partir de 8,50 €</span>
-                                <button class="product-btn">Ajouter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="Site/images/viande2.webp" alt="Plats préparés" loading="lazy">
-                        </div>
-                        <div class="product-info">
-                            <h3>Plats Préparés</h3>
-                            <p>Daubes, ragoûts et spécialités cuisinées maison</p>
-                            <div class="product-footer">
-                                <span class="product-price">À partir de 6,90 €</span>
-                                <button class="product-btn">Ajouter</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-footer-button">
-                    <a href="Site/Vues/Produit.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
-                </div>
-            </div>
-        </section>
+                    <?php endforeach; 
+                else: ?>
+                    <p style="text-align:center; color:#f5f2ed; width:100%;">Aucun produit disponible pour le moment.</p>
+                <?php endif; 
+            } catch (Exception $e) {
+                echo "<p style='color:white;'>Erreur de chargement des produits.</p>";
+            } ?>
+        </div>
+
+        <div class="product-footer-button" style="text-align: center; margin-top: 40px;">
+            <a href="Site/Controleurs/liste_produits.php"><button class="btn-voir-produits">Voir tous nos produits</button></a>
+        </div>
+    </div>
+</section>
 
         <section class="testimonials">
             <div class="container">
@@ -322,14 +270,11 @@
                 </div>
             </div>
         </section>
-
-        
     </main>
 
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
     
-            <!-- LOGO + DESCRIPTION -->
             <div class="footer-section">
                     <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
     
@@ -339,7 +284,6 @@
                 </div>
             </div>
     
-            <!-- PLAN DU SITE -->
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
@@ -352,7 +296,6 @@
                 </ul>
             </div>
     
-            <!-- HORAIRES -->
             <div class="footer-section">
                 <h2>Horaires</h2>
                 <p>Lundi : Fermé</p>
@@ -364,7 +307,6 @@
                 <p>Dimanche : Fermé</p>
             </div>
     
-            <!-- CONTACT -->
             <div class="footer-section">
                 <h2>Contact</h2>
                 <p>Ben20mohamed97@gmail.com</p>
@@ -372,7 +314,6 @@
                 <p>14 Pl. du Béarn, 64150 Mourenx</p>
             </div>
     
-            <!-- GOOGLE MAPS -->
             <div class="footer-section footer-map">
                 <h2>Nous trouver</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.2743678430566!2d-0.6325365231790336!3d43.37128687111703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f651ffc7de2b%3A0x499ef61367106771!2s14%20Pl.%20du%20B%C3%A9arn%2C%2064150%20Mourenx!5e0!3m2!1sfr!2sfr!4v1768483752878!5m2!1sfr!2sfr" 
@@ -382,45 +323,17 @@
     
         </div>
     
-        <!-- BOTTOM -->
         <div class="footer-bottom">
-            <p class="copyright">
-                Tous droits réservés • 
-                <a href="#">CGU</a> • 
-                <a href="#">RGPD</a> • 
-                <a href="#">Mentions légales</a>
-            </p>
-            
+        <p class="copyright">© 2026 Boucherie Agadir. Tous droits réservés.</p>
+        <div class="footer-legal">
+            <a href="#">CGU</a>
+            <a href="#">RGPD</a>
+            <a href="#">Mentions légales</a>
         </div>
+    </div>
     </footer>
 
-    <div id='contenu'>
-			<?php
-			// si aucune information n'est présente dans l'url, le controleur par défaut sera 'accueil'
-			if (isset($_GET['controleur']))
-				$controleur = filter_var($_GET['controleur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-			else
-				$controleur = 'general';
-
-			switch ($controleur) {
-				case 'general':
-					include_once 'Site/Vues/liste_produit.php';
-					break;
-				case 'developpeurs':
-					include_once 'controleurs/gestionDeveloppeurs.php';
-					break;
-				case 'competence':
-					include_once 'controleurs/gestionCompetence.php';
-					break;
-			}
-
-
-			?>
-
-		</div>
-
     <script>
-        // Menu mobile toggle amélioré
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
         const body = document.body;
@@ -434,7 +347,6 @@
                 nav.classList.toggle('nav-open');
                 menuToggle.classList.toggle('active');
                 
-                // Empêcher le scroll du body quand le menu est ouvert
                 if (isOpen) {
                     body.classList.add('menu-open');
                     body.style.overflow = 'hidden';
@@ -444,7 +356,6 @@
                 }
             });
             
-            // Fermer le menu quand on clique sur un lien
             const navLinks = nav.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
@@ -457,70 +368,18 @@
                     }
                 });
             });
-            
-            // Fermer le menu quand on redimensionne la fenêtre
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    nav.classList.remove('nav-open');
-                    menuToggle.classList.remove('active');
-                    body.classList.remove('menu-open');
-                    body.style.overflow = '';
-                }
-            });
         }
 
-        // Sticky header amélioré
         const header = document.querySelector('.header');
         if (header) {
-            let lastScroll = 0;
-
             window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                if (currentScroll > 100) {
+                if (window.pageYOffset > 100) {
                     header.classList.add('header-scrolled');
                 } else {
                     header.classList.remove('header-scrolled');
                 }
-                lastScroll = currentScroll;
             }, { passive: true });
         }
-
-        // Smooth scroll for anchor links amélioré
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href === '#' || href === '#accueil') {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    return;
-                }
-                
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    const headerHeight = header ? header.offsetHeight : 0;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-
-                const note = 4.4;
-                const starTotal = 5;
-
-                // Calcul du pourcentage
-                const starPercentage = (note / starTotal) * 100;
-
-                // Application de la largeur à la couche de remplissage
-                document.querySelector('.stars-inner').style.width = starPercentage + '%';
-            });
-        });
     </script>
 </body>
 </html>
