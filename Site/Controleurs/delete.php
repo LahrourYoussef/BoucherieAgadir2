@@ -19,7 +19,7 @@ if (!$produit) {
 
 
 // 🔹 Supprimer le fichier image
-$imagePath = __DIR__ . "/uploads/" . $produit['URL_PHOTO'];
+$imagePath = __DIR__ . "/../uploads/" . $produit['URL_PHOTO'];
 if (!empty($produit['URL_PHOTO']) && file_exists($imagePath)) {
     unlink($imagePath);
 }
@@ -35,5 +35,5 @@ $pdo->prepare("DELETE FROM Stock WHERE Id_Produit = ?")->execute([$id]);
 // 🔹 Supprimer le produit
 $pdo->prepare("DELETE FROM Produit WHERE Id_Produit = ?")->execute([$id]);
 
-header("Location: index.php?success=delete");
+header("Location: admin/produits_admin.php?success=delete");
 exit;

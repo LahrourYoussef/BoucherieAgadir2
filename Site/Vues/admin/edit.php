@@ -1,5 +1,5 @@
 <?php
-require 'config.php'; // connexion PDO
+require '../../../config.php'; // connexion PDO
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID invalide");
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 🔹 Nouvelle image ?
     if (!empty($_FILES['photo']['name']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         $imageName = uniqid() . "_" . preg_replace("/[^a-zA-Z0-9\._-]/", "", basename($_FILES['photo']['name']));
-        $target = __DIR__ . "/uploads/" . $imageName;
+        $target = __DIR__ . "/../../uploads/" . $imageName;
         
         if (!move_uploaded_file($_FILES['photo']['tmp_name'], $target)) {
             die("Erreur lors du déplacement du fichier.");
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id
         ]);
 
-        header("Location: index.php?success=edit");
+        header("Location: ../../Controleurs/admin/produits_admin.php?success=edit");
         exit;
     } catch (PDOException $e) {
         // Supprimer la nouvelle image en cas d'erreur

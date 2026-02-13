@@ -34,9 +34,9 @@
                     <img src="Site/images/panier.png" alt="Panier" class="icon-cart" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
-                <button class="cart-button" aria-label="Mon Compte">
+                <a href="Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
                     <img src="Site/images/compte2.png" alt="Compte" class="icon-account" />
-                </button>
+                </a>
             </div>
         </div>
     </header>

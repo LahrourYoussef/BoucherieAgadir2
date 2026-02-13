@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require '../../../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $image = $_FILES['photo'];
     $filename = uniqid() . "_" . preg_replace("/[^a-zA-Z0-9\._-]/", "", basename($image['name']));
-    $target = __DIR__ . "/uploads/" . $filename;
+    $target = __DIR__ . "/../../uploads/" . $filename;
 
     if (!move_uploaded_file($image['tmp_name'], $target)) {
         die("Erreur lors du déplacement du fichier.");
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $idTypeViande
         ]);
 
-        header("Location: index.php?success=1");
+        header("Location: produits_admin.php?success=1");
         exit;
     } catch (PDOException $e) {
         // Supprimer l'image uploadée en cas d'erreur

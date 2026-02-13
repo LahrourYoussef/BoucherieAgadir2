@@ -1,38 +1,12 @@
-<?php
-require '../../../config.php';
-
-// ================== CHARGEMENT DES OPTIONS DEPUIS LA BASE DE DONNÉES ==================
-
-// Charger les origines
-$stmt = $pdo->query("SELECT Id_Origine, Pays FROM Origine ORDER BY Pays");
-$origines = $stmt->fetchAll();
-
-// Charger les types de produits
-$stmt = $pdo->query("SELECT Id_Type_Produit, Nom_Type_Produit FROM Type_Produit ORDER BY Nom_Type_Produit");
-$typesProduits = $stmt->fetchAll();
-
-// Charger les types de viande
-$stmt = $pdo->query("SELECT Id_Type_Viande, Nom_Type_Viande FROM Type_Viande ORDER BY Nom_Type_Viande");
-$typesViande = $stmt->fetchAll();
-
-// Charger les sous-catégories
-$stmt = $pdo->query("SELECT Id_Sous_Categorie, Nom_Sous_Categorie FROM Sous_Categorie ORDER BY Nom_Sous_Categorie");
-$sousCategories = $stmt->fetchAll();
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 2022</title>
-    <link rel="stylesheet" href="../../Styles/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dashboard - Boucherie Agadir</title>
+    <link rel="stylesheet" href="../../Styles/style.css">
 </head>
 <body>
+
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
@@ -66,103 +40,57 @@ $sousCategories = $stmt->fetchAll();
     </header>
 
     <main>
+        <center> 
+            <h1 class="headMenu">Bienvenue sur le menu de gestion <?= htmlspecialchars($nomAdmin) ?></h1>
+        </center> 
+        <br>
 
-        <!-- HERO CONTACT -->
-       
-        <div class="publication-container">
-    <h2>Nouvelle publication</h2>
+        <section class="products-grid" style="padding: 50px 20px; max-width: 1200px; margin: auto;">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/produit.png" alt="Illustration produits">
+                </div>
+                <div class="product-info">
+                    <h3>Gestion des produits</h3>
+                    <div class="product-footer">
+                        <a href="produits_admin.php" class="product-btn" style="text-decoration: none; text-align: center; width: 100%;">Gérer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/post.png" alt="Illustration posts">
+                </div>
+                <div class="product-info">
+                    <h3>Gestion des posts</h3>
+                    <div class="product-footer">
+                        <a href="#" class="product-btn" style="text-decoration: none; text-align: center; width: 100%;">Gérer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="../../images/user.png" alt="Illustration users">
+                </div>
+                <div class="product-info">
+                    <h3>Gestion des users (admin)</h3>
+                    <div class="product-footer" style="display: flex; gap: 10px;">
+                        <a href="register.php" class="product-btn" style="text-decoration: none; text-align: center; flex: 1;">Ajouter</a>
+                        <a href="users.php" class="product-btn" style="text-decoration: none; text-align: center; flex: 1;">Gérer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <form action="../../Controleurs/admin/upload.php" method="POST" enctype="multipart/form-data">
-
-<!-- Image produit -->
-<label>Photo du produit</label>
-<input type="file" name="photo" id="photoInput" required>
-
-<div class="image-preview" id="imagePreview">
-    <span>Aperçu de l’image</span>
-</div>
-
-<!-- Nom produit -->
-<label>Nom du produit</label>
-<input type="text" name="nom_produit" placeholder="Nom du produit" required>
-
-<!-- Description -->
-<label>Description</label>
-<textarea name="description_produit" placeholder="Description du produit"></textarea>
-
-<!-- Prix -->
-<label>Prix unitaire (€)</label>
-<input type="number" step="0.01" name="prix_unitaire" required>
-
-<label>Prix au KG (€)</label>
-<input type="number" step="0.01" name="prix_kg">
-
-<!-- Unité de vente -->
-<label>Unité de vente</label>
-<select name="unite_vente" required>
-    <option value="">Choisir une unité</option>
-    <option value="KG">Kilogramme</option>
-    <option value="PIECE">Pièce</option>
-    <option value="LOT">Lot</option>
-</select>
-
-<!-- Origine -->
-<label>Origine</label>
-<select name="id_origine" required>
-    <option value="">Choisir une origine</option>
-    <?php foreach ($origines as $origine): ?>
-        <option value="<?= htmlspecialchars($origine['Id_Origine']) ?>">
-            <?= htmlspecialchars($origine['Pays']) ?>
-        </option>
-    <?php endforeach; ?>
-</select>
-
-<!-- Type de produit -->
-<label>Type de produit</label>
-<select name="id_type_produit" required>
-    <option value="">Choisir un type</option>
-    <?php foreach ($typesProduits as $typeProduit): ?>
-        <option value="<?= htmlspecialchars($typeProduit['Id_Type_Produit']) ?>">
-            <?= htmlspecialchars($typeProduit['Nom_Type_Produit']) ?>
-        </option>
-    <?php endforeach; ?>
-</select>
-
-<!-- Type de viande -->
-<label>Type de viande</label>
-<select name="id_type_viande" required>
-    <option value="">Choisir une viande</option>
-    <?php foreach ($typesViande as $typeViande): ?>
-        <option value="<?= htmlspecialchars($typeViande['Id_Type_Viande']) ?>">
-            <?= htmlspecialchars($typeViande['Nom_Type_Viande']) ?>
-        </option>
-    <?php endforeach; ?>
-</select>
-
-<!-- Sous-catégorie -->
-<label>Sous-catégorie</label>
-<select name="id_sous_categorie" required>
-    <option value="">Choisir une sous-catégorie</option>
-    <?php foreach ($sousCategories as $sousCategorie): ?>
-        <option value="<?= htmlspecialchars($sousCategorie['Id_Sous_Categorie']) ?>">
-            <?= htmlspecialchars($sousCategorie['Nom_Sous_Categorie']) ?>
-        </option>
-    <?php endforeach; ?>
-
-</select>
-
-<button type="submit">Publier le produit</button>
-
-</form>
-
-
-</div>
-
-    
+        <center>
+            <p class="headMenu">Cliquer pour vous déconnecter 👇</p> <br>
+            <button id="buttonDeco"><a href="../../Controleurs/admin/logout.php" >Déconnexion</a></button>
+        </center> 
+        <br><br>
     </main>
-    
-
-    <footer class="footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
         <div class="footer-container">
     
             <!-- LOGO + DESCRIPTION -->
@@ -230,21 +158,10 @@ $sousCategories = $stmt->fetchAll();
         </div>
     </footer>
 
-    <div class="success-popup" id="successPopup">
-    <div class="success-card">
-        <div class="success-icon">✔</div>
-        <h3>Publication réussie</h3>
-        <p>Ton produit a bien été publié 🎉</p>
-    </div>
-</div>
-
-    
-
     <script>
         // Menu mobile toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
-        
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);
@@ -254,66 +171,24 @@ $sousCategories = $stmt->fetchAll();
 
         // Sticky header
         const header = document.querySelector('.header');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
+            if (window.pageYOffset > 100) {
                 header.classList.add('header-scrolled');
             } else {
                 header.classList.remove('header-scrolled');
             }
-            lastScroll = currentScroll;
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
     </script>
-    
-    <script>
-// Gestion de l'aperçu de l'image avant upload
-const input = document.getElementById("photoInput"); // correspond au name="photo"
-const preview = document.getElementById("imagePreview");
-
-input.addEventListener("change", () => {
-    const file = input.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        preview.innerHTML = `<img src="${reader.result}" alt="Aperçu image">`;
-        preview.classList.add("active");
-    };
-    reader.readAsDataURL(file);
-});
-</script>
-
-<script>
-// Popup succès après insertion
-const params = new URLSearchParams(window.location.search);
-const popup = document.getElementById("successPopup");
-
-if (params.get("success") === "1") {
-    popup.classList.add("active");
-
-    setTimeout(() => {
-        popup.classList.remove("active");
-        history.replaceState(null, "", window.location.pathname);
-    }, 3000);
-}
-</script>
-
-
 </body>
 </html>
