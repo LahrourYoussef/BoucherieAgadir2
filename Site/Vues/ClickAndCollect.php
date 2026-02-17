@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
+    <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
+    <title>Boucherie Agadir - Viande Fraîche depuis 2022</title>
     <link rel="stylesheet" href="../Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -365,9 +365,9 @@
     <div class="footer-bottom">
         <p class="copyright">
             
-            <a href="#">CGU</a> • 
-            <a href="#">RGPD</a> • 
-            <a href="#">Mentions légales</a>
+            <a href="cgu.php">CGU</a> • 
+            <a href="rgpd.php">RGPD</a> • 
+            <a href="mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>

@@ -404,9 +404,9 @@ h1{ text-align:center; margin:20px 0; }
     <div class="footer-bottom">
         <p class="copyright">
             
-            <a href="#">CGU</a> • 
-            <a href="#">RGPD</a> • 
-            <a href="#">Mentions légales</a>
+            <a href="/Site/Vues/cgu.php">CGU</a> • 
+            <a href="/Site/Vues/rgpd.php">RGPD</a> • 
+            <a href="/Site/Vues/mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>
