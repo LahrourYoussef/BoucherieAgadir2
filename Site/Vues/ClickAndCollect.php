@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 1997. Découvrez notre sélection de viandes préparées avec soin." />
     <title>Boucherie Agadir - Viande Fraîche depuis 1997</title>
-    <link rel="stylesheet" href="/Site/Styles/style.css" />
+    <link rel="stylesheet" href="../Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-              <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+              <a href="../../index.php"><img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -22,20 +22,20 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="/index.php#histoire" class="nav-link">La Boucherie</a>
-                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
-                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
-                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
+                <a href="../../index.php#histoire" class="nav-link">La Boucherie</a>
+                <a href="../Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="Promotions.php" class="nav-link">Promotions</a>
+                <a href="ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
+                    <img src="../images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
-                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
-                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                <a href="../Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="../images/compte2.png" alt="Compte" class="icon-account" />
                 </a>
             </div>
         </div>
@@ -98,7 +98,7 @@
 
             <div class="hero-col">
                 <div class="col-Container">
-                    <h2><span class="hero-ClickCollect-text-number">1</span>Choisissez vos produits</h2>
+                    <h2>1 Choisissez vos produits</h2>
                     <p>Commandez en ligne et retirez vos produits en magasin</p>
                     <center>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="100px" height="100px">
@@ -109,7 +109,7 @@
                       
                 </div>
                 <div class="col-Container">
-                    <h2><span class="hero-ClickCollect-text-number">2</span>Validez votre commande</h2>
+                    <h2>2 Validez votre commande</h2>
                     <p>Une fois votre commande terminée, vous pouvez choisir la date et l'heure de retrait pour votre commande.
                     </p>
                     <center>
@@ -120,7 +120,7 @@
                       
                 </div>
                 <div class="col-Container">
-                    <h2><span class="hero-ClickCollect-text-number">3</span>Récupérez en magasin</h2>
+                    <h2>3 Récupérez en magasin</h2>
                     <p>Sélectionnez un mode de paiement pour régler l'acompte demandé et il ne vous reste plus qu'à récupérer votre commande en magasin.</p>
                     <center>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="100px" height="100px" >
@@ -314,14 +314,14 @@
 
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+                <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
             </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                    <img src="/Site/images/instagram.png" alt="Instagram" width="24" height="24">
+                    <img src="../images/instagram.png" alt="Instagram" width="24" height="24">
                 </a>
                 <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                    <img src="/Site/images/tiktok.png" alt="TikTok" width="26" height="26">
+                    <img src="../images/tiktok.png" alt="TikTok" width="26" height="26">
                 </a>
             </div>
         </div>
@@ -330,11 +330,11 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="/index.php#accueil">Accueil</a></li>
-                    <li><a href="/index.php#histoire">Notre histoire</a></li>
-                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
-                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
-                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="../../index.php#accueil">Accueil</a></li>
+                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
+                    <li><a href="../Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="Promotions.php">Promotions</a></li>
+                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
                 </ul>
             </div>
 
