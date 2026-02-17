@@ -271,67 +271,309 @@
             </div>
         </section>
     </main>
+    
 
-    <footer class="footer" role="contentinfo">
+    <!-- <footer class="footer" role="contentinfo">
         <div class="footer-container">
     
-            <div class="footer-section">
-                    <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" >
-    
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px">
+                </div>
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
                     <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
                 </div>
             </div>
     
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h2>Plan du site</h2>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#histoire">Notre histoire</a></li>
+                        <li><a href="#produits">Nos produits</a></li>
+                        <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
+                        <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                        <li><a href="Site/Vues/Contact.php">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section">
+                    <h2>Horaires</h2>
+                    <p>Lundi : Fermé</p>
+                    <p>Mardi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                    <p>Mercredi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                    <p>Jeudi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                    <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
+                    <p>Samedi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                    <p>Dimanche : Fermé</p>
+                </div>
+        
+                <div class="footer-section">
+                    <h2>Contact</h2>
+                    <p>Ben20mohamed97@gmail.com</p>
+                    <p>06 27 29 85 56</p>
+                    <p>14 Pl. du Béarn, 64150 Mourenx</p>
+                </div>
+            </div>
+    
+            <div class="footer-map">
+                <h2>Nous trouver</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.274367843064!2d-0.6325365238468116!3d43.37128687111687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f651fe5aaaab%3A0x91bd7d0d97301f1a!2sBoucherie%20halal%20Mourenx!5e0!3m2!1sfr!2sfr!4v1771267825731!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p class="copyright">
+                Tous droits réservés • 
+                <a href="#">CGU</a> • 
+                <a href="#">RGPD</a> • 
+                <a href="#">Mentions légales</a>
+            </p>
+            
+        </div>
+    </footer> -->
+
+    <style>
+    /* Styles spécifiques au Footer */
+    .footer {
+        background: #ffffff;
+        color: #1a1a1a;
+        padding: 60px 0 20px;
+        font-family: "Inter", sans-serif;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    /* GAUCHE : Logo et Réseaux */
+    .footer-brand {
+        flex: 0 0 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .footer-socials a img {
+        transition: transform 0.3s ease;
+    }
+
+    .footer-socials a:hover img {
+        transform: translateY(-3px);
+    }
+
+    /* CENTRE : Groupement des colonnes de liens */
+    .footer-links-group {
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        min-width: 500px;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-section h2 {
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+        position: relative;
+    }
+
+    /* Petit trait décoratif sous les titres */
+    .footer-section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: #d10f1c; /* Couleur primaire */
+    }
+
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 14px;
+        color: #555555;
+        line-height: 1.8;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li a:hover {
+        color: #d10f1c;
+    }
+
+    /* DROITE : Carte Google Maps */
+    .footer-map {
+        flex: 0 0 350px;
+    }
+
+    .footer-map h2 {
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
+
+    .footer-map iframe {
+        width: 100%;
+        height: 180px;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    /* BAS : Copyright et Liens légaux */
+    .footer-bottom {
+        max-width: 1400px;
+        margin: 50px auto 0;
+        padding: 20px 40px 0;
+        border-top: 1px solid #eeeeee;
+        text-align: center;
+    }
+
+    .copyright {
+        font-size: 13px;
+        color: #999;
+    }
+
+    .copyright a {
+        color: #999;
+        text-decoration: none;
+        margin: 0 8px;
+        transition: color 0.3s ease;
+    }
+
+    .copyright a:hover {
+        color: #d10f1c;
+    }
+
+    /* RESPONSIVE : Tablettes et Mobiles */
+    @media (max-width: 1024px) {
+        .footer-links-group {
+            min-width: 100%;
+            order: 2;
+        }
+        .footer-map {
+            order: 3;
+            flex: 1 1 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-brand {
+            align-items: center;
+            flex: 1 1 100%;
+        }
+        .footer-section {
+            text-align: center;
+        }
+        .footer-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .footer-links-group {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+</style>
+
+<footer class="footer" role="contentinfo">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
+                    <img src="/Site/images/instagram.png" alt="Instagram" width="24" height="24">
+                </a>
+                <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
+                    <img src="/Site/images/tiktok.png" alt="TikTok" width="26" height="26">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-links-group">
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#histoire">Notre histoire</a></li>
-                    <li><a href="#produits">Nos produits</a></li>
-                    <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
-                    <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
-                    <li><a href="Site/Vues/Contact.php">Contact</a></li>
+                    <li><a href="/index.php#accueil">Accueil</a></li>
+                    <li><a href="/index.php#histoire">Notre histoire</a></li>
+                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer-section">
                 <h2>Horaires</h2>
-                <p>Lundi : Fermé</p>
-                <p>Mardi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                <p>Mercredi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                <p>Jeudi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
+                <p>Lun & Dim : Fermé</p>
+
+                <p>Mar - Sam : 09h30 - 13h00</p>
+                <p>15h30 - 19h00</p>
                 <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
-                <p>Samedi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                <p>Dimanche : Fermé</p>
             </div>
-    
+
             <div class="footer-section">
                 <h2>Contact</h2>
                 <p>Ben20mohamed97@gmail.com</p>
                 <p>06 27 29 85 56</p>
                 <p>14 Pl. du Béarn, 64150 Mourenx</p>
             </div>
-    
-            <div class="footer-section footer-map">
-                <h2>Nous trouver</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.2743678430566!2d-0.6325365231790336!3d43.37128687111703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f651ffc7de2b%3A0x499ef61367106771!2s14%20Pl.%20du%20B%C3%A9arn%2C%2064150%20Mourenx!5e0!3m2!1sfr!2sfr!4v1768483752878!5m2!1sfr!2sfr" 
-                loading="lazy" >
-                </iframe>
-            </div>
-    
         </div>
-    
-        <div class="footer-bottom">
-        <p class="copyright">© 2026 Boucherie Agadir. Tous droits réservés.</p>
-        <div class="footer-legal">
-            <a href="#">CGU</a>
-            <a href="#">RGPD</a>
-            <a href="#">Mentions légales</a>
+
+        <div class="footer-map">
+            <h2>Nous trouver</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.123456789!2d-0.6123456789!3d43.37123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f123456789%3A0x123456789!2zMTQgUGwuIGR1IELDqWFybiwgNjQxNTAgTW91cmVueA!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
         </div>
+
     </div>
-    </footer>
+
+    <div class="footer-bottom">
+        <p class="copyright">
+            
+            <a href="#">CGU</a> • 
+            <a href="#">RGPD</a> • 
+            <a href="#">Mentions légales</a>
+        </p>
+    </div>
+</footer>
 
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
