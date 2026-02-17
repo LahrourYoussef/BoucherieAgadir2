@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Mon panier - Boucherie Agadir</title>
-<link rel="stylesheet" href="/Site/Styles/style.css">
+<link rel="stylesheet" href="<?= ROOT_URL ?>Site/Styles/style.css">
 
 <style>
-/* ... Tes styles CSS internes restent identiques ... */
 body{ font-family:Arial, sans-serif; background:#f5f7fb; margin:0; }
 h1{ text-align:center; margin:20px 0; }
 .checkout-container{ display:grid; grid-template-columns: 2fr 1fr; gap:30px; width:95%; max-width:1300px; margin:20px auto 80px; }
@@ -39,7 +38,7 @@ h1{ text-align:center; margin:20px 0; }
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-              <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+              <a href="<?= ROOT_URL ?>index.php"><img src="<?= ROOT_URL ?>Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -49,20 +48,20 @@ h1{ text-align:center; margin:20px 0; }
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="/index.php#histoire" class="nav-link">La Boucherie</a>
-                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
-                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
-                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
+                <a href="<?= ROOT_URL ?>index.php#histoire" class="nav-link">La Boucherie</a>
+                <a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/Promotions.php" class="nav-link">Promotions</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
+                    <img src="<?= ROOT_URL ?>Site/images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
-                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
-                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                <a href="<?= ROOT_URL ?>Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="<?= ROOT_URL ?>Site/images/compte2.png" alt="Compte" class="icon-account" />
                 </a>
             </div>
         </div>
@@ -70,7 +69,7 @@ h1{ text-align:center; margin:20px 0; }
 
 <h1>🛒 Mon panier</h1>
 
-<a href="/Site/Controleurs/liste_produits.php" class="back-btn">← Retour boutique</a>
+<a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php" class="back-btn">← Retour boutique</a>
 
 <?php if (empty($cart)): ?>
     <p style="text-align:center; margin-top:20px;">Votre panier est vide</p>
@@ -88,20 +87,22 @@ h1{ text-align:center; margin:20px 0; }
                 <th></th>
             </tr>
 
-            <?php foreach ($cart as $item): 
+            <?php 
+            $total = 0; 
+            foreach ($cart as $item): 
                 $ligne_total = $item['prix'] * $item['quantite'];
                 $total += $ligne_total;
             ?>
             <tr>
                 <td class="cart-product">
-                    <img src="/Site/uploads/<?= htmlspecialchars($item['photo']) ?>">
+                    <img src="<?= ROOT_URL ?>Site/uploads/<?= htmlspecialchars($item['photo']) ?>">
                     <div><b><?= htmlspecialchars($item['nom']) ?></b></div>
                 </td>
 
                 <td><?= number_format($item['prix'], 2) ?> €</td>
 
                 <td>
-                    <form action="/Site/Controleurs/update_cart.php" method="POST" class="qte-form">
+                    <form action="<?= ROOT_URL ?>Site/Controleurs/update_cart.php" method="POST" class="qte-form">
                         <input type="hidden" name="id" value="<?= $item['id'] ?>">
                         <input type="number" name="quantite" value="<?= $item['quantite'] ?>" min="1">
                         <button type="submit">↻</button>
@@ -111,7 +112,7 @@ h1{ text-align:center; margin:20px 0; }
                 <td><?= number_format($ligne_total, 2) ?> €</td>
 
                 <td>
-                    <a href="/Site/Controleurs/remove_from_cart.php?id=<?= $item['id'] ?>" class="delete-btn">❌</a>
+                    <a href="<?= ROOT_URL ?>Site/Controleurs/remove_from_cart.php?id=<?= $item['id'] ?>" class="delete-btn">❌</a>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -124,7 +125,7 @@ h1{ text-align:center; margin:20px 0; }
     </div>
 
     <div class="cart-right">
-        <form action="/Site/Controleurs/checkout.php" method="POST" class="client-form">
+        <form action="<?= ROOT_URL ?>Site/Controleurs/checkout.php" method="POST" class="client-form">
             <h2>🧾 Informations client</h2>
             <div class="form-group">
                 <label>Nom</label>
@@ -165,7 +166,7 @@ h1{ text-align:center; margin:20px 0; }
 
             <input type="hidden" name="total" value="<?= $total ?>">
             <button type="submit" class="pay-btn">🧾 Valider la commande</button>
-            <a href="/index.php" class="back-btn" style="text-align:center; display:block; margin-top:15px;">← Retour boutique</a>
+            <a href="<?= ROOT_URL ?>index.php" class="back-btn" style="text-align:center; display:block; margin-top:15px;">← Retour boutique</a>
         </form>
     </div>
 </div>
@@ -173,7 +174,6 @@ h1{ text-align:center; margin:20px 0; }
 <?php endif; ?>
 
 <style>
-    /* Styles spécifiques au Footer */
     .footer {
         background: #ffffff;
         color: #1a1a1a;
@@ -181,7 +181,6 @@ h1{ text-align:center; margin:20px 0; }
         font-family: "Inter", sans-serif;
         border-top: 1px solid #f0f0f0;
     }
-
     .footer-container {
         max-width: 1400px;
         margin: 0 auto;
@@ -192,29 +191,13 @@ h1{ text-align:center; margin:20px 0; }
         gap: 40px;
         flex-wrap: wrap;
     }
-
-    /* GAUCHE : Logo et Réseaux */
     .footer-brand {
         flex: 0 0 150px;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-
-    .footer-socials {
-        display: flex;
-        gap: 15px;
-    }
-
-    .footer-socials a img {
-        transition: transform 0.3s ease;
-    }
-
-    .footer-socials a:hover img {
-        transform: translateY(-3px);
-    }
-
-    /* CENTRE : Groupement des colonnes de liens */
+    .footer-socials { display: flex; gap: 15px; }
     .footer-links-group {
         flex: 1;
         display: flex;
@@ -222,22 +205,13 @@ h1{ text-align:center; margin:20px 0; }
         gap: 30px;
         min-width: 500px;
     }
-
-    .footer-section {
-        text-align: left;
-    }
-
     .footer-section h2 {
         font-size: 14px;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1px;
         margin-bottom: 20px;
-        color: #1a1a1a;
         position: relative;
     }
-
-    /* Petit trait décoratif sous les titres */
     .footer-section h2::after {
         content: '';
         position: absolute;
@@ -245,49 +219,14 @@ h1{ text-align:center; margin:20px 0; }
         left: 0;
         width: 30px;
         height: 2px;
-        background: #d10f1c; /* Couleur primaire */
+        background: #d10f1c;
     }
-
-    .footer-section p,
-    .footer-section ul li a {
-        font-size: 14px;
-        color: #555555;
-        line-height: 1.8;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-section ul li a:hover {
-        color: #d10f1c;
-    }
-
-    /* DROITE : Carte Google Maps */
-    .footer-map {
-        flex: 0 0 350px;
-    }
-
-    .footer-map h2 {
-        font-size: 14px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-
     .footer-map iframe {
         width: 100%;
         height: 180px;
         border-radius: 12px;
         border: none;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
-
-    /* BAS : Copyright et Liens légaux */
     .footer-bottom {
         max-width: 1400px;
         margin: 50px auto 0;
@@ -295,122 +234,59 @@ h1{ text-align:center; margin:20px 0; }
         border-top: 1px solid #eeeeee;
         text-align: center;
     }
-
-    .copyright {
-        font-size: 13px;
-        color: #999;
-    }
-
-    .copyright a {
-        color: #999;
-        text-decoration: none;
-        margin: 0 8px;
-        transition: color 0.3s ease;
-    }
-
-    .copyright a:hover {
-        color: #d10f1c;
-    }
-
-    /* RESPONSIVE : Tablettes et Mobiles */
-    @media (max-width: 1024px) {
-        .footer-links-group {
-            min-width: 100%;
-            order: 2;
-        }
-        .footer-map {
-            order: 3;
-            flex: 1 1 100%;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .footer-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .footer-brand {
-            align-items: center;
-            flex: 1 1 100%;
-        }
-        .footer-section {
-            text-align: center;
-        }
-        .footer-section h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .footer-links-group {
-            flex-direction: column;
-            gap: 40px;
-        }
-    }
+    .copyright a { color: #999; text-decoration: none; margin: 0 8px; }
 </style>
 
 <footer class="footer" role="contentinfo">
     <div class="footer-container">
-
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+                <img src="<?= ROOT_URL ?>Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
             </div>
             <div class="footer-socials">
-                <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                    <img src="/Site/images/instagram.png" alt="Instagram" width="24" height="24">
-                </a>
-                <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                    <img src="/Site/images/tiktok.png" alt="TikTok" width="26" height="26">
-                </a>
+                <a href="https://www.instagram.com/boucherie_agadir_/"><img src="<?= ROOT_URL ?>Site/images/instagram.png" alt="Instagram" width="24"></a>
+                <a href="https://www.tiktok.com/@boucherie.agadir.64"><img src="<?= ROOT_URL ?>Site/images/tiktok.png" alt="TikTok" width="26"></a>
             </div>
         </div>
-
         <div class="footer-links-group">
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="/index.php#accueil">Accueil</a></li>
-                    <li><a href="/index.php#histoire">Notre histoire</a></li>
-                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
-                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
-                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="<?= ROOT_URL ?>index.php#accueil">Accueil</a></li>
+                    <li><a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="<?= ROOT_URL ?>Site/Vues/Promotions.php">Promotions</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h2>Horaires</h2>
-                <p>Lun & Dim : Fermé</p>
-
-                <p>Mar - Sam : 09h30 - 13h00</p>
-                <p>15h30 - 19h00</p>
-                <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>.
+                <p>Mar - Sam : 09h30 - 13h00 / 15h30 - 19h00</p>
             </div>
-
             <div class="footer-section">
                 <h2>Contact</h2>
-                <p>Ben20mohamed97@gmail.com</p>
                 <p>06 27 29 85 56</p>
                 <p>14 Pl. du Béarn, 64150 Mourenx</p>
             </div>
         </div>
-
         <div class="footer-map">
-            <h2>Nous trouver</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.123456789!2d-0.6123456789!3d43.37123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f123456789%3A0x123456789!2zMTQgUGwuIGR1IELDqWFybiwgNjQxNTAgTW91cmVueA!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
         </div>
-
     </div>
-
     <div class="footer-bottom">
         <p class="copyright">
-            
-            <a href="/Site/Vues/cgu.php">CGU</a> • 
-            <a href="/Site/Vues/rgpd.php">RGPD</a> • 
-            <a href="/Site/Vues/mentions-legales.php">Mentions légales</a>
+            <a href="<?= ROOT_URL ?>Site/Vues/cgu.php">CGU</a> • 
+            <a href="<?= ROOT_URL ?>Site/Vues/rgpd.php">RGPD</a> • 
+            <a href="<?= ROOT_URL ?>Site/Vues/mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>
 
-
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuToggle.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

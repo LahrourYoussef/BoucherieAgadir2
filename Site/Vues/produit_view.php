@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($produit['Nom_Produit']) ?> - Boucherie Agadir</title>
-    <link rel="stylesheet" href="/Site/Styles/style.css">
+    <link rel="stylesheet" href="<?= ROOT_URL ?>Site/Styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         a { text-decoration: none; }
@@ -25,7 +25,7 @@
     <header class="header" role="banner">
         <div class="header-container">
             <div class="logo" aria-label="Boucherie Agadir">
-                <a href="/index.php"><img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
+                <a href="<?= ROOT_URL ?>index.php"><img src="<?= ROOT_URL ?>Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
             </div>
             
             <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
@@ -33,20 +33,20 @@
             </button>
             
             <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="/index.php#histoire" class="nav-link">La Boucherie</a>
-                <a href="/Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
-                <a href="/Site/Vues/Promotions.php" class="nav-link">Promotions</a>
-                <a href="/Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="/Site/Vues/Contact.php" class="nav-link">Contact</a>
+                <a href="<?= ROOT_URL ?>index.php#histoire" class="nav-link">La Boucherie</a>
+                <a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php" class="nav-link">Nos produits</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/Promotions.php" class="nav-link">Promotions</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
+                <a href="<?= ROOT_URL ?>Site/Vues/Contact.php" class="nav-link">Contact</a>
             </nav>
             
             <div class="icons">
                 <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="/Site/images/panier.svg" alt="Panier" class="icon" />
+                    <img src="<?= ROOT_URL ?>Site/images/panier.svg" alt="Panier" class="icon" />
                     <span class="cart-badge" aria-hidden="true">0</span>
                 </button>
-                <a href="/Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
-                    <img src="/Site/images/compte2.png" alt="Compte" class="icon-account" />
+                <a href="<?= ROOT_URL ?>Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
+                    <img src="<?= ROOT_URL ?>Site/images/compte2.png" alt="Compte" class="icon-account" />
                 </a>
             </div>
         </div>
@@ -55,7 +55,7 @@
     <main>
         <div class="product-page">
             <div class="product-left">
-                <img src="../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-main-img">
+                <img src="<?= ROOT_URL ?>Site/uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-main-img">
             </div>
             
             <section class="product-page-section">
@@ -77,10 +77,10 @@
                     </div>
 
                     <div class="product-actions">
-                        <a href="../Controleurs/add_to_cart.php?id=<?= $produit['Id_Produit'] ?>" class="btn-cart">
+                        <a href="<?= ROOT_URL ?>Site/Controleurs/add_to_cart.php?id=<?= $produit['Id_Produit'] ?>" class="btn-cart">
                             Ajouter au panier
                         </a>
-                        <a href="../Controleurs/liste_produits.php" class="btn-back">← Retour boutique</a>
+                        <a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php" class="btn-back">← Retour boutique</a>
                     </div>
                 </div>
             </section>
@@ -152,7 +152,6 @@
         position: relative;
     }
 
-    /* Petit trait décoratif sous les titres */
     .footer-section h2::after {
         content: '';
         position: absolute;
@@ -160,7 +159,7 @@
         left: 0;
         width: 30px;
         height: 2px;
-        background: #d10f1c; /* Couleur primaire */
+        background: #d10f1c; 
     }
 
     .footer-section p,
@@ -202,7 +201,6 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
-    /* BAS : Copyright et Liens légaux */
     .footer-bottom {
         max-width: 1400px;
         margin: 50px auto 0;
@@ -227,7 +225,6 @@
         color: #d10f1c;
     }
 
-    /* RESPONSIVE : Tablettes et Mobiles */
     @media (max-width: 1024px) {
         .footer-links-group {
             min-width: 100%;
@@ -268,14 +265,14 @@
 
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+                <img src="<?= ROOT_URL ?>Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
             </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                    <img src="/Site/images/instagram.png" alt="Instagram" width="24" height="24">
+                    <img src="<?= ROOT_URL ?>Site/images/instagram.png" alt="Instagram" width="24" height="24">
                 </a>
                 <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                    <img src="/Site/images/tiktok.png" alt="TikTok" width="26" height="26">
+                    <img src="<?= ROOT_URL ?>Site/images/tiktok.png" alt="TikTok" width="26" height="26">
                 </a>
             </div>
         </div>
@@ -284,21 +281,20 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="/index.php#accueil">Accueil</a></li>
-                    <li><a href="/index.php#histoire">Notre histoire</a></li>
-                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
-                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
-                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="<?= ROOT_URL ?>index.php#accueil">Accueil</a></li>
+                    <li><a href="<?= ROOT_URL ?>index.php#histoire">Notre histoire</a></li>
+                    <li><a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="<?= ROOT_URL ?>Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="<?= ROOT_URL ?>Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h2>Horaires</h2>
                 <p>Lun & Dim : Fermé</p>
-
                 <p>Mar - Sam : 09h30 - 13h00</p>
                 <p>15h30 - 19h00</p>
-                <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
+                <p>Vendredi : 09h30 - 12h30,<br> 15h30 - 19h00</p>
             </div>
 
             <div class="footer-section">
@@ -318,17 +314,14 @@
 
     <div class="footer-bottom">
         <p class="copyright">
-            
-            <a href="/Site/Vues/cgu.php">CGU</a> • 
-            <a href="/Site/Vues/rgpd.php">RGPD</a> • 
-            <a href="/Site/Vues/mentions-legales.php">Mentions légales</a>
+            <a href="<?= ROOT_URL ?>Site/Vues/cgu.php">CGU</a> • 
+            <a href="<?= ROOT_URL ?>Site/Vues/rgpd.php">RGPD</a> • 
+            <a href="<?= ROOT_URL ?>Site/Vues/mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>
 
-
     <script>
-        // Menu mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
         menuToggle.addEventListener('click', () => {
@@ -336,7 +329,6 @@
             menuToggle.classList.toggle('active');
         });
 
-        // Header scroll
         const header = document.querySelector('.header');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 100) header.classList.add('header-scrolled');

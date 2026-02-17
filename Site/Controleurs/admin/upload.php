@@ -3,7 +3,7 @@ require '../../../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Récupération et sécurisation des champs
+    // 1. Récupération et sécurisation des champs
     $nomProduit       = trim($_POST['nom_produit'] ?? '');
     $description      = trim($_POST['description_produit'] ?? '');
     $prixUnitaire     = $_POST['prix_unitaire'] ?? '';
@@ -19,79 +19,88 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Tous les champs obligatoires doivent être remplis.");
     }
 
-    // Vérifier que les IDs existent dans la base de données
-    try {
-        // Vérifier Id_Sous_Categorie
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Sous_Categorie WHERE Id_Sous_Categorie = ?");
-        $stmt->execute([$idSousCategorie]);
-        if ($stmt->fetchColumn() == 0) {
-            die("Erreur : La sous-catégorie sélectionnée (ID: $idSousCategorie) n'existe pas dans la base de données.");
-        }
-
-        // Vérifier Id_Origine
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Origine WHERE Id_Origine = ?");
-        $stmt->execute([$idOrigine]);
-        if ($stmt->fetchColumn() == 0) {
-            die("Erreur : L'origine sélectionnée (ID: $idOrigine) n'existe pas dans la base de données.");
-        }
-
-        // Vérifier Id_Type_Produit
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Type_Produit WHERE Id_Type_Produit = ?");
-        $stmt->execute([$idTypeProduit]);
-        if ($stmt->fetchColumn() == 0) {
-            die("Erreur : Le type de produit sélectionné (ID: $idTypeProduit) n'existe pas dans la base de données.");
-        }
-
-        // Vérifier Id_Type_Viande
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM Type_Viande WHERE Id_Type_Viande = ?");
-        $stmt->execute([$idTypeViande]);
-        if ($stmt->fetchColumn() == 0) {
-            die("Erreur : Le type de viande sélectionné (ID: $idTypeViande) n'existe pas dans la base de données.");
-        }
-    } catch (PDOException $e) {
-        die("Erreur lors de la validation des données : " . $e->getMessage());
-    }
-
-    // Vérifier l'image
+    // 2. Validation de l'image (SÉCURITÉ RENFORCÉE)
     if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
         die("Erreur lors de l'upload de l'image.");
     }
 
     $image = $_FILES['photo'];
-    $filename = uniqid() . "_" . preg_replace("/[^a-zA-Z0-9\._-]/", "", basename($image['name']));
-    $target = __DIR__ . "/../../uploads/" . $filename;
+    $extension = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
 
-    if (!move_uploaded_file($image['tmp_name'], $target)) {
-        die("Erreur lors du déplacement du fichier.");
+    // Vérification de l'extension
+    if (!in_array($extension, $allowedExtensions)) {
+        die("Erreur : Seules les images (jpg, png, webp) sont autorisées.");
     }
 
-    // Insertion dans la table Produit
-    try {
-        $sql = "INSERT INTO Produit 
-            (Nom_Produit, Description_Produit, Prix_Unitaire, Prix_KG, URL_PHOTO, Unite_Vente, Id_Sous_Categorie, Id_Origine, Id_Type_Produit, Id_Type_Viande)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            $nomProduit,
-            $description,
-            $prixUnitaire,
-            $prixKG,
-            $filename,
-            $uniteVente,
-            $idSousCategorie,
-            $idOrigine,
-            $idTypeProduit,
-            $idTypeViande
-        ]);
+    // Vérification du type MIME réel (empêche les fichiers .sql renommés en .jpg)
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mimeType = finfo_file($finfo, $image['tmp_name']);
+    finfo_close($finfo);
 
-        header("Location: produits_admin.php?success=1");
-        exit;
-    } catch (PDOException $e) {
-        // Supprimer l'image uploadée en cas d'erreur
-        if (file_exists($target)) {
-            unlink($target);
+    if (strpos($mimeType, 'image/') !== 0) {
+        die("Erreur : Le contenu du fichier n'est pas une image valide.");
+    }
+
+    // 3. Préparation du fichier
+    $filename = uniqid() . "_" . preg_replace("/[^a-zA-Z0-9\._-]/", "", basename($image['name']));
+    $targetDir = __DIR__ . "/../../uploads/";
+    $targetFile = $targetDir . $filename;
+
+    // Créer le dossier s'il n'existe pas
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0755, true);
+    }
+
+    // 4. Validation des IDs en base de données
+    try {
+        $tables = [
+            'Sous_Categorie' => $idSousCategorie,
+            'Origine' => $idOrigine,
+            'Type_Produit' => $idTypeProduit,
+            'Type_Viande' => $idTypeViande
+        ];
+
+        foreach ($tables as $table => $id) {
+            $column = "Id_" . $table;
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM $table WHERE $column = ?");
+            $stmt->execute([$id]);
+            if ($stmt->fetchColumn() == 0) {
+                die("Erreur : La valeur sélectionnée pour $table n'existe pas.");
+            }
         }
-        die("Erreur lors de l'insertion du produit : " . $e->getMessage());
+    } catch (PDOException $e) {
+        die("Erreur de validation : " . $e->getMessage());
+    }
+
+    // 5. Déplacement du fichier et Insertion SQL
+    if (move_uploaded_file($image['tmp_name'], $targetFile)) {
+        try {
+            $sql = "INSERT INTO Produit 
+                (Nom_Produit, Description_Produit, Prix_Unitaire, Prix_KG, URL_PHOTO, Unite_Vente, Id_Sous_Categorie, Id_Origine, Id_Type_Produit, Id_Type_Viande)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                $nomProduit,
+                $description,
+                $prixUnitaire,
+                $prixKG,
+                $filename,
+                $uniteVente,
+                $idSousCategorie,
+                $idOrigine,
+                $idTypeProduit,
+                $idTypeViande
+            ]);
+
+            header("Location: produits_admin.php?success=1");
+            exit;
+        } catch (PDOException $e) {
+            if (file_exists($targetFile)) unlink($targetFile); // Supprime l'image si la BDD échoue
+            die("Erreur lors de l'insertion : " . $e->getMessage());
+        }
+    } else {
+        die("Erreur lors du déplacement du fichier vers le dossier uploads.");
     }
 }
