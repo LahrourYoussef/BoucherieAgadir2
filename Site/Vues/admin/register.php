@@ -24,10 +24,10 @@
             </nav>
             
             <div class="icons">
-                <button class="cart-button">
-                    <img src="../../images/panier.svg" alt="Panier" class="icon" />
-                    <span class="cart-badge">0</span>
-                </button>
+                <button class="cart-button" aria-label="Panier d'achat">
+    <img src="Site/images/panier.svg" alt="Panier" class="icon-cart" />
+    <span class="cart-badge" aria-hidden="true">0</span>
+</button>
             </div>
         </div>
     </header>
