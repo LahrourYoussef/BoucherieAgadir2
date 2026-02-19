@@ -173,69 +173,7 @@ h1{ text-align:center; margin:20px 0; }
 
 <?php endif; ?>
 
-<style>
-    .footer {
-        background: #ffffff;
-        color: #1a1a1a;
-        padding: 60px 0 20px;
-        font-family: "Inter", sans-serif;
-        border-top: 1px solid #f0f0f0;
-    }
-    .footer-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-    .footer-brand {
-        flex: 0 0 150px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .footer-socials { display: flex; gap: 15px; }
-    .footer-links-group {
-        flex: 1;
-        display: flex;
-        justify-content: space-around;
-        gap: 30px;
-        min-width: 500px;
-    }
-    .footer-section h2 {
-        font-size: 14px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        position: relative;
-    }
-    .footer-section h2::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 30px;
-        height: 2px;
-        background: #d10f1c;
-    }
-    .footer-map iframe {
-        width: 100%;
-        height: 180px;
-        border-radius: 12px;
-        border: none;
-    }
-    .footer-bottom {
-        max-width: 1400px;
-        margin: 50px auto 0;
-        padding: 20px 40px 0;
-        border-top: 1px solid #eeeeee;
-        text-align: center;
-    }
-    .copyright a { color: #999; text-decoration: none; margin: 0 8px; }
-</style>
+
 
 <footer class="footer" role="contentinfo">
     <div class="footer-container">
