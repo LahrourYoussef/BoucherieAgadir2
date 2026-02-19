@@ -47,7 +47,7 @@
             <div class="gallery">
                 <?php if (!empty($posts)): // $posts vient du contrôleur ?>
                     <?php foreach ($posts as $produit): ?>
-                    <div class="card">
+                    <div class="product-card">
                         <img src="../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" class="product-img">
                         <div class="product-info">  
                             <h3 class="product-title"><?= htmlspecialchars($produit['Nom_Produit']) ?></h3>

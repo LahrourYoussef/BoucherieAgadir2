@@ -1,10 +1,8 @@
 <?php
 // Site/Controleurs/details_produits.php
 
-// 1. Inclusion de la configuration (qui contient maintenant ROOT_URL et $pdo)
 require_once __DIR__ . '/../../config.php';
 
-// 2. Vérification et sécurisation de l'ID passé en paramètre
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     // Redirection vers la liste si l'ID est manquant ou n'est pas un nombre
     header("Location: " . ROOT_URL . "Site/Controleurs/liste_produits.php");
@@ -14,8 +12,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 $id = (int) $_GET['id'];
 
 try {
-    // 3. Préparation de la requête avec toutes les jointures nécessaires
-    // p.* récupère tout de Produit, les JOIN récupèrent les noms au lieu des simples IDs
+    
     $stmt = $pdo->prepare("
         SELECT 
             p.*, 
@@ -34,12 +31,10 @@ try {
     $stmt->execute([$id]);
     $produit = $stmt->fetch();
 
-    // 4. Si le produit n'existe pas dans la base
     if (!$produit) {
         die("Désolé, ce produit n'est plus disponible ou n'existe pas.");
     }
 
-    // 5. Appel de la vue pour l'affichage (le fichier que nous avons corrigé juste avant)
     include '../Vues/produit_view.php';
 
 } catch (PDOException $e) {
