@@ -1,16 +1,11 @@
-
-# BEGIN WordPress
-# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
-# dynamically generated, and should only be modified via WordPress filters.
-# Any changes to the directives between these markers will be overwritten.
-<IfModule mod_rewrite.c>
+# Activation du moteur de réécriture d'URL
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
 
-# END WordPress
+# Empêcher le listage des répertoires (sécurité)
+Options -Indexes
+
+# Optionnel : Rediriger l'autorisation HTTP (utile pour certains serveurs)
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Si vous souhaitez plus tard cacher les extensions .php dans l'URL, 
+# c'est ici qu'on ajoutera les règles.

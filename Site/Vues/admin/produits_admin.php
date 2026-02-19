@@ -1,3 +1,22 @@
+<?php
+// Site/Vues/admin/produits_admin.php
+require_once '../../../config.php';
+
+// Récupération des produits avec leurs libellés
+try {
+    $stmt = $pdo->query("SELECT p.*, o.Pays, tp.Nom_Type_Produit, tv.Nom_Type_Viande, sc.Nom_Sous_Categorie 
+                         FROM Produit p
+                         JOIN Origine o ON p.Id_Origine = o.Id_Origine
+                         JOIN Type_Produit tp ON p.Id_Type_Produit = tp.Id_Type_Produit
+                         JOIN Type_Viande tv ON p.Id_Type_Viande = tv.Id_Type_Viande
+                         JOIN Sous_Categorie sc ON p.Id_Sous_Categorie = sc.Id_Sous_Categorie
+                         ORDER BY p.Id_Produit DESC");
+    $posts = $stmt->fetchAll();
+} catch (PDOException $e) {
+    die("Erreur lors de la récupération des produits : " . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +25,6 @@
     <title>Gestion des Produits - Admin</title>
     <link rel="stylesheet" href="../../Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header class="header" role="banner">
@@ -43,36 +61,36 @@
         <center><h1 id="liste-des-produits">Liste des produits en ligne</h1></center><br>
 
         <div class="gallery">
-            <?php foreach ($posts as $produit): ?>
-            <div class="admin-card">
-                <img src="../../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>"
-                     alt="photo produit">
+            <?php if (empty($posts)): ?>
+                <p style="text-align:center; width:100%;">Aucun produit disponible.</p>
+            <?php else: ?>
+                <?php foreach ($posts as $produit): ?>
+                <div class="admin-card">
+                    <img src="../../uploads/<?= htmlspecialchars($produit['URL_PHOTO']) ?>" alt="photo produit">
+                    <div class="product-info"> 
+                        <h3 class="product-title"><?= htmlspecialchars($produit['Nom_Produit']) ?></h3>
+                        <p class="product-desc"><?= htmlspecialchars($produit['Description_Produit']) ?></p>
+                        <p class="product-meta"><b>Prix :</b> <?= $produit['Prix_Unitaire'] ?> € / <?= htmlspecialchars($produit['Unite_Vente']) ?></p>
+                        <?php if ($produit['Prix_KG']): ?>
+                            <p class="product-meta"><b>Prix au KG :</b> <?= $produit['Prix_KG'] ?> €</p>
+                        <?php endif; ?>
+                        <p class="product-meta"><b>Origine :</b> <?= htmlspecialchars($produit['Pays']) ?></p>
+                        <p class="product-meta"><b>Type :</b> <?= htmlspecialchars($produit['Nom_Type_Produit']) ?></p>
+                        <p class="product-meta"><b>Viande :</b> <?= htmlspecialchars($produit['Nom_Type_Viande']) ?></p>
+                        <p class="product-meta"><b>Sous-catégorie :</b> <?= htmlspecialchars($produit['Nom_Sous_Categorie']) ?></p>
 
-                <div class="product-info"> 
-                    <h3 class="product-title"><?= htmlspecialchars($produit['Nom_Produit']) ?></h3>
-                    <p class="product-desc"><?= htmlspecialchars($produit['Description_Produit']) ?></p>
-                    <p class="product-meta"><b>Prix :</b> <?= $produit['Prix_Unitaire'] ?> € / <?= $produit['Unite_Vente'] ?></p>
-
-                    <?php if ($produit['Prix_KG']): ?>
-                        <p class="product-meta"><b>Prix au KG :</b> <?= $produit['Prix_KG'] ?> €</p>
-                    <?php endif; ?>
-
-                    <p class="product-meta"><b>Origine :</b> <?= htmlspecialchars($produit['Pays']) ?></p>
-                    <p class="product-meta"><b>Type :</b> <?= htmlspecialchars($produit['Nom_Type_Produit']) ?></p>
-                    <p class="product-meta"><b>Viande :</b> <?= htmlspecialchars($produit['Nom_Type_Viande']) ?></p>
-                    <p class="product-meta"><b>Sous-catégorie :</b> <?= htmlspecialchars($produit['Nom_Sous_Categorie']) ?></p>
-
-                    <div class="actions">
-                        <a href="edit.php?id=<?= $produit['Id_Produit'] ?>" class="edit">✏️ Modifier</a>
-                        <a href="../Controleurs/delete.php?id=<?= $produit['Id_Produit'] ?>"
-                           class="delete"
-                           onclick="return confirm('Supprimer ce produit définitivement ?')">
-                           🗑️ Supprimer
-                        </a>
+                        <div class="actions">
+                            <a href="edit.php?id=<?= $produit['Id_Produit'] ?>" class="edit">✏️ Modifier</a>
+                            <a href="../../Controleurs/delete.php?id=<?= $produit['Id_Produit'] ?>"
+                               class="delete"
+                               onclick="return confirm('Supprimer ce produit définitivement ?')">
+                               🗑️ Supprimer
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </main>
 
@@ -97,7 +115,6 @@
         flex-wrap: wrap;
     }
 
-    /* GAUCHE : Logo et Réseaux */
     .footer-brand {
         flex: 0 0 150px;
         display: flex;
@@ -118,7 +135,6 @@
         transform: translateY(-3px);
     }
 
-    /* CENTRE : Groupement des colonnes de liens */
     .footer-links-group {
         flex: 1;
         display: flex;
@@ -141,7 +157,6 @@
         position: relative;
     }
 
-    /* Petit trait décoratif sous les titres */
     .footer-section h2::after {
         content: '';
         position: absolute;
@@ -149,7 +164,7 @@
         left: 0;
         width: 30px;
         height: 2px;
-        background: #d10f1c; /* Couleur primaire */
+        background: #d10f1c;
     }
 
     .footer-section p,
@@ -170,7 +185,6 @@
         color: #d10f1c;
     }
 
-    /* DROITE : Carte Google Maps */
     .footer-map {
         flex: 0 0 350px;
     }
@@ -191,7 +205,6 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
-    /* BAS : Copyright et Liens légaux */
     .footer-bottom {
         max-width: 1400px;
         margin: 50px auto 0;
@@ -216,45 +229,22 @@
         color: #d10f1c;
     }
 
-    /* RESPONSIVE : Tablettes et Mobiles */
     @media (max-width: 1024px) {
-        .footer-links-group {
-            min-width: 100%;
-            order: 2;
-        }
-        .footer-map {
-            order: 3;
-            flex: 1 1 100%;
-        }
+        .footer-links-group { min-width: 100%; order: 2; }
+        .footer-map { order: 3; flex: 1 1 100%; }
     }
 
     @media (max-width: 768px) {
-        .footer-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .footer-brand {
-            align-items: center;
-            flex: 1 1 100%;
-        }
-        .footer-section {
-            text-align: center;
-        }
-        .footer-section h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .footer-links-group {
-            flex-direction: column;
-            gap: 40px;
-        }
+        .footer-container { flex-direction: column; align-items: center; text-align: center; }
+        .footer-brand { align-items: center; flex: 1 1 100%; }
+        .footer-section { text-align: center; }
+        .footer-section h2::after { left: 50%; transform: translateX(-50%); }
+        .footer-links-group { flex-direction: column; gap: 40px; }
     }
 </style>
 
 <footer class="footer" role="contentinfo">
     <div class="footer-container">
-
         <div class="footer-brand">
             <div class="footer-logo">
                 <img src="../../images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
@@ -284,10 +274,9 @@
             <div class="footer-section">
                 <h2>Horaires</h2>
                 <p>Lun & Dim : Fermé</p>
-
                 <p>Mar - Sam : 09h30 - 13h00</p>
                 <p>15h30 - 19h00</p>
-                <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
+                <p>Vendredi : 09h30 - 12h30, 15h30 - 19h00</p>
             </div>
 
             <div class="footer-section">
@@ -300,39 +289,34 @@
 
         <div class="footer-map">
             <h2>Nous trouver</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.123456789!2d-0.6123456789!3d43.37123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f123456789%3A0x123456789!2zMTQgUGwuIGR1IELDqWFybiwgNjQxNTAgTW91cmVueA!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
         </div>
-
     </div>
 
     <div class="footer-bottom">
         <p class="copyright">
-            
-            <a href="#">CGU</a> • 
-            <a href="#">RGPD</a> • 
-            <a href="#">Mentions légales</a>
+            <a href="../cgu.php">CGU</a> • 
+            <a href="../rgpd.php">RGPD</a> • 
+            <a href="../mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>
 
-
-    <script>
-        // Menu mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        if (menuToggle && nav) {
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('nav-open');
-                menuToggle.classList.toggle('active');
-            });
-        }
-
-        // Sticky header
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) header.classList.add('header-scrolled');
-            else header.classList.remove('header-scrolled');
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-open');
+            menuToggle.classList.toggle('active');
         });
-    </script>
+    }
+
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) header.classList.add('header-scrolled');
+        else header.classList.remove('header-scrolled');
+    });
+</script>
 </body>
 </html>

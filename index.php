@@ -517,14 +517,14 @@
 
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="/Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+                <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
             </div>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                    <img src="/Site/images/instagram.png" alt="Instagram" width="24" height="24">
+                    <img src="Site/images/instagram.png" alt="Instagram" width="24" height="24">
                 </a>
                 <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                    <img src="/Site/images/tiktok.png" alt="TikTok" width="26" height="26">
+                    <img src="Site/images/tiktok.png" alt="TikTok" width="26" height="26">
                 </a>
             </div>
         </div>
@@ -533,11 +533,11 @@
             <div class="footer-section">
                 <h2>Plan du site</h2>
                 <ul>
-                    <li><a href="/index.php#accueil">Accueil</a></li>
-                    <li><a href="/index.php#histoire">Notre histoire</a></li>
-                    <li><a href="/Site/Controleurs/liste_produits.php">Nos produits</a></li>
-                    <li><a href="/Site/Vues/Promotions.php">Promotions</a></li>
-                    <li><a href="/Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
+                    <li><a href="index.php#accueil">Accueil</a></li>
+                    <li><a href="index.php#histoire">Notre histoire</a></li>
+                    <li><a href="Site/Controleurs/liste_produits.php">Nos produits</a></li>
+                    <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
+                    <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
                 </ul>
             </div>
 
@@ -568,9 +568,9 @@
     <div class="footer-bottom">
         <p class="copyright">
             
-            <a href="/Site/Vues/cgu.php">CGU</a> • 
-            <a href="/Site/Vues/rgpd.php">RGPD</a> • 
-            <a href="/Site/Vues/mentions-legales.php">Mentions légales</a>
+            <a href="Site/Vues/cgu.php">CGU</a> • 
+            <a href="Site/Vues/rgpd.php">RGPD</a> • 
+            <a href="Site/Vues/mentions-legales.php">Mentions légales</a>
         </p>
     </div>
 </footer>
