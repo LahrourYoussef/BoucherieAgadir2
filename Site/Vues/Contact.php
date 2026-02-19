@@ -43,8 +43,6 @@
 
     <main>
 
-        <!-- HERO CONTACT -->
-       
         </section>
     
         <!-- SECTION CONTACT -->
@@ -95,9 +93,6 @@
                             </div>
                         </div>
 
-                      <!-- FORMULAIRE -->
-<!-- FORMULAIRE -->
-<!-- FORMULAIRE CONTACT FINAL -->
 <div class="contact-form-container visual-card">
     <form id="contact-form" action="https://formsubmit.co/undeuxundeuxtestetest@gmail.com" method="POST" class="contact-form">
 

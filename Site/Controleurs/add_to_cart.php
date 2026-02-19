@@ -36,5 +36,5 @@ if (isset($_SESSION['cart'][$id])) {
     ];
 }
 
-header("Location: cart.php");
+header("Location: " . ROOT_URL . "Site/Controleurs/panier.php");
 exit;
