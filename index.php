@@ -9,37 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header" role="banner">
-        <div class="header-container">
-            <div class="logo" aria-label="Boucherie Agadir">
-                <a href="#accueil"><img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px" ></a>
-            </div>
-            
-            <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <nav class="nav" role="navigation" aria-label="Navigation principale">
-                <a href="#histoire" class="nav-link">Notre histoire</a>
-                <a href="Site/Controleurs/liste_produits.php">Nos produits</a>
-                <a href="Site/Vues/Promotions.php" class="nav-link">Promotions</a>
-                <a href="Site/Vues/ClickAndCollect.php" class="nav-link">Click & Collect</a>
-                <a href="Site/Vues/Contact.php" class="nav-link">Contact</a>
-            </nav>
-            
-            <div class="icons">
-                <button class="cart-button" aria-label="Panier d'achat">
-                    <img src="Site/images/panier.svg" alt="Panier" class="icon-cart" />
-                    <span class="cart-badge" aria-hidden="true">0</span>
-                </button>
-                <a href="Site/Controleurs/admin/auth.php" class="cart-button" aria-label="Mon Compte">
-                    <img src="Site/images/compte2.png" alt="Compte" class="icon-account" />
-                </a>
-            </div>
-        </div>
-    </header>
+    <?php include __DIR__ . '/Site/Vues/header.php'; ?>
 
     <main>
         <section class="hero" id="accueil">
@@ -52,7 +22,7 @@
                         pour garantir goût et fraîcheur.
                     </p>
                     <button class="cta" aria-label="Voir notre sélection de produits">
-                        Voir notre sélection 
+                        <a href="Site/Controleurs/liste_produits.php">Voir notre sélection</a>
                     </button>
                     <div class="reviews" role="region" aria-label="Avis clients">
                         <div class="stars-outer">
@@ -271,72 +241,6 @@
             </div>
         </section>
     </main>
-    
-
-    <!-- <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-    
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <img src="Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="45px">
-                </div>
-                <div class="footer-socials">
-                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram"><img src="Site/images/instagram.png" alt="Instagram" style="width: 33px; height: 33px;"></a>
-                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok"><img src="Site/images/tiktok.png" alt="TikTok" style="width: 36px; height: 36px;"></a>
-                </div>
-            </div>
-    
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h2>Plan du site</h2>
-                    <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#histoire">Notre histoire</a></li>
-                        <li><a href="#produits">Nos produits</a></li>
-                        <li><a href="Site/Vues/Promotions.php">Promotions</a></li>
-                        <li><a href="Site/Vues/ClickAndCollect.php">Click & Collect</a></li>
-                        <li><a href="Site/Vues/Contact.php">Contact</a></li>
-                    </ul>
-                </div>
-        
-                <div class="footer-section">
-                    <h2>Horaires</h2>
-                    <p>Lundi : Fermé</p>
-                    <p>Mardi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                    <p>Mercredi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                    <p>Jeudi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                    <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
-                    <p>Samedi : 09h30 - 13h00,<br> 15h30 - 19h00</p>
-                    <p>Dimanche : Fermé</p>
-                </div>
-        
-                <div class="footer-section">
-                    <h2>Contact</h2>
-                    <p>Ben20mohamed97@gmail.com</p>
-                    <p>06 27 29 85 56</p>
-                    <p>14 Pl. du Béarn, 64150 Mourenx</p>
-                </div>
-            </div>
-    
-            <div class="footer-map">
-                <h2>Nous trouver</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2900.274367843064!2d-0.6325365238468116!3d43.37128687111687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f651fe5aaaab%3A0x91bd7d0d97301f1a!2sBoucherie%20halal%20Mourenx!5e0!3m2!1sfr!2sfr!4v1771267825731!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-    
-        </div>
-    
-        <div class="footer-bottom">
-            <p class="copyright">
-                Tous droits réservés • 
-                <a href="#">CGU</a> • 
-                <a href="#">RGPD</a> • 
-                <a href="#">Mentions légales</a>
-            </p>
-            
-        </div>
-    </footer> -->
-
-    
 
 <footer class="footer" role="contentinfo">
     <div class="footer-container">
@@ -401,53 +305,6 @@
     </div>
 </footer>
 
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        const body = document.body;
-        
-        if (menuToggle && nav) {
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-                const isOpen = !isExpanded;
-                
-                menuToggle.setAttribute('aria-expanded', isOpen);
-                nav.classList.toggle('nav-open');
-                menuToggle.classList.toggle('active');
-                
-                if (isOpen) {
-                    body.classList.add('menu-open');
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.classList.remove('menu-open');
-                    body.style.overflow = '';
-                }
-            });
-            
-            const navLinks = nav.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        nav.classList.remove('nav-open');
-                        menuToggle.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        body.style.overflow = '';
-                    }
-                });
-            });
-        }
-
-        const header = document.querySelector('.header');
-        if (header) {
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 100) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
-            }, { passive: true });
-        }
-    </script>
+    <script src="<?= ROOT_URL ?>Site/js/script.js"></script>
 </body>
 </html>

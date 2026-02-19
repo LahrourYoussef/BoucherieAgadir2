@@ -49,7 +49,7 @@ try {
     <main>
         <div class="admin-header">
             <h1>Gestion de la Galerie</h1>
-            <a href="add.php" class="add-btn">➕ Nouveau Produit</a>
+            <a href="../../Vues/admin/add.php" class="add-btn">➕ Nouveau Produit</a>
         </div>
 
         <div class="admin-header">
@@ -83,30 +83,61 @@ try {
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="../../images/Logo.webp" alt="Logo" width="50">
+                <div class="footer-logo">
+                    <img src="../../images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
+                        <img src="../../images/instagram.png" alt="Instagram" width="24" height="24">
+                    </a>
+                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
+                        <img src="../../images/tiktok.png" alt="TikTok" width="26" height="26">
+                    </a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h2>Navigation</h2>
-                <ul>
-                    <li><a href="../../../index.php">Accueil</a></li>
-                    <li><a href="../../Controleurs/liste_produits.php">Nos produits</a></li>
-                </ul>
+
+            <div class="footer-links-group">
+                <div class="footer-section">
+                    <h2>Plan du site</h2>
+                    <ul>
+                        <li><a href="../../../index.php#accueil">Accueil</a></li>
+                        <li><a href="../../../index.php#histoire">Notre histoire</a></li>
+                        <li><a href="../../Controleurs/liste_produits.php">Nos produits</a></li>
+                        <li><a href="../Promotions.php">Promotions</a></li>
+                        <li><a href="../ClickAndCollect.php">Click & Collect</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h2>Horaires</h2>
+                    <p>Lun & Dim : Fermé</p>
+                    <p>Mar - Sam : 09h30 - 13h00 / 15h30 - 19h00</p>
+                    <p>Vendredi : 09h30 - 12h30 / 15h30 - 19h00</p>
+                </div>
+
+                <div class="footer-section">
+                    <h2>Contact</h2>
+                    <p>Ben20mohamed97@gmail.com</p>
+                    <p>06 27 29 85 56</p>
+                    <p>14 Pl. du Béarn, 64150 Mourenx</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h2>Contact</h2>
-                <p>14 Pl. du Béarn, 64150 Mourenx</p>
-                <p>06 27 29 85 56</p>
+
+            <div class="footer-map">
+                <h2>Nous trouver</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.123456789!2d-0.6123456789!3d43.37123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f123456789%3A0x123456789!2zMTQgUGwuIGR1IELDqWFybiwgNjQxNTAgTW91cmVueA!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="footer-section">
-                <h2>Légal</h2>
-                <ul>
-                    <li><a href="../cgu.php">CGU</a></li>
-                    <li><a href="../rgpd.php">RGPD</a></li>
-                </ul>
-            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">
+                <a href="../cgu.php">CGU</a> •
+                <a href="../rgpd.php">RGPD</a> •
+                <a href="../mentions-legales.php">Mentions légales</a>
+            </p>
         </div>
     </footer>
 </body>
