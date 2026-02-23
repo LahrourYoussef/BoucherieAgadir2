@@ -60,54 +60,7 @@
         </div>
     </main>
  
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="<?= ROOT_URL ?>Site/images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
-                </div>
-                <div class="footer-socials">
-                    <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                        <img src="<?= ROOT_URL ?>Site/images/instagram.png" alt="Instagram" width="24">
-                    </a>
-                    <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                        <img src="<?= ROOT_URL ?>Site/images/tiktok.png" alt="TikTok" width="26">
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-links-group">
-                <div class="footer-section">
-                    <h2>Plan du site</h2>
-                    <ul>
-                        <li><a href="<?= ROOT_URL ?>index.php#accueil">Accueil</a></li>
-                        <li><a href="<?= ROOT_URL ?>Site/Controleurs/liste_produits.php">Nos produits</a></li>
-                        <li><a href="<?= ROOT_URL ?>Site/Vues/Promotions.php">Promotions</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h2>Horaires</h2>
-                    <p>Mar - Sam : 09h30 - 13h00 / 15h30 - 19h00</p>
-                    <p>Vendredi : 09h30 - 12h30 / 15h30 - 19h00</p>
-                </div>
-
-                <div class="footer-section">
-                    <h2>Contact</h2>
-                    <p>06 27 29 85 56</p>
-                    <p>14 Pl. du Béarn, 64150 Mourenx</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="copyright">
-                <a href="<?= ROOT_URL ?>Site/Vues/cgu.php">CGU</a> • 
-                <a href="<?= ROOT_URL ?>Site/Vues/rgpd.php">RGPD</a> • 
-                <a href="<?= ROOT_URL ?>Site/Vues/mentions-legales.php">Mentions légales</a>
-            </p>
-        </div>
-    </footer>
+ <?php include __DIR__ . '/footer.php'; ?>
 
     <script src="<?= ROOT_URL ?>Site/js/script.js"></script>
 

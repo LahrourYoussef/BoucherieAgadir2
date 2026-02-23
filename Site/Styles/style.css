@@ -483,7 +483,7 @@ a:hover {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px;
+  padding: 40px;
 }
 
 .section-header {
@@ -781,7 +781,7 @@ a:hover {
 
 /* SECTION PROMOTIONS */
 .promotions {
-  padding: 80px 0;
+  padding: 0;
   background: var(--bg-light);
 }
 .btn-voir-produits {
@@ -856,7 +856,7 @@ a:hover {
    ========================================================================== */
 
 .click-collect {
-  padding: 80px 0;
+  padding: 0;
   background: var(--bg-light); /* FORCE LE ROSE */
 }
 
@@ -865,6 +865,7 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  padding: 40px;
 }
 
 .visual-card {
@@ -1119,7 +1120,7 @@ a:hover {
   height: auto;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: start;
 }
 
@@ -1201,7 +1202,7 @@ a:hover {
 
 .h1-ClickCollect {
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 0px;
   font-size: clamp(28px, 5vw, 48px);
   line-height: 1.2;
   text-align: center;
@@ -2225,4 +2226,7 @@ a.delete {
 /* On s'assure que le badge est visible s'il y a des articles */
 .cart-badge.show {
   transform: scale(1);
+}
+.size-6 {
+  color: #1a1a1a !important;
 }

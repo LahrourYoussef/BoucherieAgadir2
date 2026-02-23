@@ -1,20 +1,35 @@
+<?php require_once __DIR__ . '/../../config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Boucherie Agadir - Viande fraîche et de qualité depuis 2022. Découvrez notre sélection de viandes préparées avec soin." />
-    <title>Boucherie Agadir - Viande Fraîche depuis 2022</title>
-    <link rel="stylesheet" href="../Styles/style.css" />
+    <title>Click & Collect - Boucherie Agadir</title>
+    <link rel="stylesheet" href="<?= ROOT_URL ?>Site/Styles/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* On cible uniquement le contour (stroke) des SVGs dans la section des étapes */
+        .col-Container svg {
+            stroke: #000000 !important;
+            width: 80px;
+            height: 80px;
+            margin-top: 15px;
+        }
+
+        /* On centre le titre sans modifier sa couleur */
+        .h1-ClickCollect {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <?php include __DIR__ . '/header.php'; ?>
 
     <main>
-        <section class="hero-ClickCollect" id="accueil">
+        <section class="hero-ClickCollect" id="accueil" style="padding-top: 80px;">
             
-
             <section class="click-collect" id="click-collect">
                 <div class="container">
                     <div class="click-collect-content">
@@ -42,7 +57,6 @@
                                     <span>Paiement en ligne sécurisé</span>
                                 </li>
                             </ul>
-                            <button class="cta"><a href="#">Commander maintenant</a></button>
                         </div>
                         <div class="click-collect-visual">
                             <div class="visual-card">
@@ -71,143 +85,37 @@
                     <h2>1 Choisissez vos produits</h2>
                     <p>Commandez en ligne et retirez vos produits en magasin</p>
                     <center>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="100px" height="100px">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
-                      </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+                        </svg>
                     </center>
-                      
-                      
                 </div>
+
                 <div class="col-Container">
                     <h2>2 Validez votre commande</h2>
-                    <p>Une fois votre commande terminée, vous pouvez choisir la date et l'heure de retrait pour votre commande.
-                    </p>
+                    <p>Une fois votre commande terminée, vous pouvez choisir la date et l'heure de retrait pour votre commande.</p>
                     <center>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="100px" height="100px" >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                      </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
                     </center>
-                      
                 </div>
+
                 <div class="col-Container">
                     <h2>3 Récupérez en magasin</h2>
                     <p>Sélectionnez un mode de paiement pour régler l'acompte demandé et il ne vous reste plus qu'à récupérer votre commande en magasin.</p>
                     <center>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="100px" height="100px" >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
-                      </svg></center>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+                        </svg>
+                    </center>
+                </div>
             </div>
-            </div>
-
-               
-
         </section>
     </main>
 
-<footer class="footer" role="contentinfo">
-    <div class="footer-container">
-
-        <div class="footer-brand">
-            <div class="footer-logo">
-                <img src="../images/Logo.webp" alt="Logo Boucherie Agadir" width="60">
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/boucherie_agadir_/" aria-label="Instagram">
-                    <img src="../images/instagram.png" alt="Instagram" width="24" height="24">
-                </a>
-                <a href="https://www.tiktok.com/@boucherie.agadir.64" aria-label="TikTok">
-                    <img src="../images/tiktok.png" alt="TikTok" width="26" height="26">
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-links-group">
-            <div class="footer-section">
-                <h2>Plan du site</h2>
-                <ul>
-                    <li><a href="../../index.php#accueil">Accueil</a></li>
-                    <li><a href="../../index.php#histoire">Notre histoire</a></li>
-                    <li><a href="../Controleurs/liste_produits.php">Nos produits</a></li>
-                    <li><a href="Promotions.php">Promotions</a></li>
-                    <li><a href="ClickAndCollect.php">Click & Collect</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h2>Horaires</h2>
-                <p>Lun & Dim : Fermé</p>
-
-                <p>Mar - Sam : 09h30 - 13h00</p>
-                <p>15h30 - 19h00</p>
-                <p>Vendredi : : 09h30 - 12h30,<br> 15h30 - 19h00</p>
-            </div>
-
-            <div class="footer-section">
-                <h2>Contact</h2>
-                <p>Ben20mohamed97@gmail.com</p>
-                <p>06 27 29 85 56</p>
-                <p>14 Pl. du Béarn, 64150 Mourenx</p>
-            </div>
-        </div>
-
-        <div class="footer-map">
-            <h2>Nous trouver</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.123456789!2d-0.6123456789!3d43.37123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd56f123456789%3A0x123456789!2zMTQgUGwuIGR1IELDqWFybiwgNjQxNTAgTW91cmVueA!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p class="copyright">
-            
-            <a href="cgu.php">CGU</a> • 
-            <a href="rgpd.php">RGPD</a> • 
-            <a href="mentions-legales.php">Mentions légales</a>
-        </p>
-    </div>
-</footer>
-
-    
-
-    <script>
-        // Menu mobile toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.nav');
-        
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('nav-open');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Sticky header
-        const header = document.querySelector('.header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-            lastScroll = currentScroll;
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <?php include __DIR__ . '/footer.php'; ?>
+   
+    <script src="<?= ROOT_URL ?>Site/js/script.js"></script>
 </body>
 </html>

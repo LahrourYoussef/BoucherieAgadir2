@@ -184,11 +184,7 @@ input, select, textarea {
 </div>
 <?php endif; ?>
 
-<footer class="footer">
-    <div class="footer-bottom">
-        <p class="copyright">© <?= date('Y') ?> Boucherie Agadir</p>
-    </div>
-</footer>
+<?php include __DIR__ . '/footer.php'; ?>
 
 <script src="<?= ROOT_URL ?>Site/js/script.js"></script>
 
