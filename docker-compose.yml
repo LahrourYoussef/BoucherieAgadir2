@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   mariadb:
     image: mariadb:11
@@ -27,6 +25,18 @@ services:
       PMA_PASSWORD: root
     ports:
       - "8080:80"
+
+  # AJOUTEZ CE BLOC CI-DESSOUS
+  web:
+    build: .
+    container_name: php_web_boucherie
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/var/www/html
 
 volumes:
   mariadb_data:
