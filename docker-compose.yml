@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   mariadb:
     image: mariadb:11
@@ -9,7 +11,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3306:3306"
+      - "3307:3306" # Port 3307 à l'extérieur pour éviter les conflits
     volumes:
       - mariadb_data:/var/lib/mysql
 
@@ -26,7 +28,6 @@ services:
     ports:
       - "8080:80"
 
-  # AJOUTEZ CE BLOC CI-DESSOUS
   web:
     build: .
     container_name: php_web_boucherie
@@ -34,7 +35,7 @@ services:
     depends_on:
       - mariadb
     ports:
-      - "8081:80"
+      - "8082:80"
     volumes:
       - ./:/var/www/html
 
